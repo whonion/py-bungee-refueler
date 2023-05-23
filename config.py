@@ -1,3 +1,29 @@
+#import decimal,math
+import os
+import time
+from web3 import Web3
+from web3.contract import Contract
+from web3.middleware import geth_poa_middleware
+from loguru import logger
+from sys import stderr
+from multiprocessing.dummy import Pool
+from dotenv import load_dotenv
+
+load_dotenv()
+BUNGEE_ETH_ROUNER = os.getenv('BUNGEE_ETH_ROUNER')
+BUNGEE_ARB_ROUNER = os.getenv('BUNGEE_ARB_ROUNER')
+BUNGEE_OPT_ROUTER = os.getenv('BUNGEE_OPT_ROUTER')
+BUNGEE_BSC_ROUTER = os.getenv('BUNGEE_BSC_ROUTER')
+BUNGEE_MATIC_ROUNER = os.getenv('BUNGEE_MATIC_ROUNER')
+BUNGEE_FTM_ROUNER = os.getenv('BUNGEE_FTM_ROUNER')
+
+RPC_ETH = os.getenv('RPC_ETH')
+RPC_ARB = os.getenv('RPC_ARB')
+RPC_OPT = os.getenv('RPC_OPT')
+RPC_BSC = os.getenv('RPC_BSC')
+RPC_MATIC =  os.getenv('RPC_MATIC')
+RPC_FTM =  os.getenv('RPC_FTM')
+
 EXP_ETH = 'https://etherscan.io/tx/'
 EXP_ARB = 'https://arbiscan.io/tx/'
 EXP_OPT = 'https://optimistic.etherscan.io/tx/'

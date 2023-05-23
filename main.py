@@ -109,7 +109,7 @@ def calculateGasPrice(private_key,tx:dict):
             'nonce': nonce,
             'gas': gas_limit,
             'gasPrice': gas_price,
-            'value': w3.to_wei(gas_amount,'ether')
+            'value': w3.to_wei((gas_amount *1.3),'ether')
         }              
         estimated_gas = w3.eth.estimate_gas(tx)
         gas_limit = int(estimated_gas * 1.3)
@@ -172,7 +172,9 @@ if __name__ == '__main__':
     print('3. OPT')
     print('4. BSC')
     print('5. MATIC')
+    print('6. FTM')
     parent_chain = input('Введите короткое название сети: ')
+    parent_chain = parent_chain.upper()
     parent_chain = parent_chain.upper()
     if parent_chain == 'ETH':
          chainId = 1
@@ -199,28 +201,41 @@ if __name__ == '__main__':
          rpc = RPC_MATIC
          contract = BUNGEE_MATIC_ROUNER
          tx_explorer = EXP_MATIC
+    elif parent_chain == 'FTM':
+         chainId = 250
+         rpc = RPC_FTM
+         contract = BUNGEE_FTM_ROUNER
+         tx_explorer = EXP_FTM
 
     print(f'{parent_chain} выбрана в качестве исходной сети для отправки газа')
 
     destinationChainId = chainId
     while (destinationChainId ==  chainId):
-        destination_chain = input(f'Выберите сеть назначения(ETH и {parent_chain} выбрать нельзя): ')
+        destination_chain = input(f'Select a destination chain(ETH or {parent_chain} can not be selected): ')
         destination_chain = destination_chain.upper()
 
         if destination_chain == 'ETH':
-            print(f'{destination_chain} не может использоваться в качестве целевой сети')
+            print(f'{destination_chain} cannot be used as a target chain')
+            
         elif destination_chain == 'ARB':
             destinationChainId = 42161
             gas_amount = minGasAmount(parent_chain,destination_chain)
+
         elif destination_chain == 'OPT':
             destinationChainId = 10
             gas_amount = minGasAmount(parent_chain,destination_chain)
+
         elif destination_chain == 'BSC':
             destinationChainId = 56
             gas_amount = minGasAmount(parent_chain,destination_chain)
+
         elif destination_chain == 'MATIC':
             destinationChainId = 137
+            gas_amount = minGasAmount(parent_chain,destination_chain)
 
+        elif destination_chain == 'FTM':
+            destinationChainId = 250
+            gas_amount = minGasAmount(parent_chain,destination_chain)
     #Select sending method     
     print('Выберите метод рассылки газа:')
     tx_type = 0

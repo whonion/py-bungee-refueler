@@ -1,29 +1,4 @@
-#import decimal,math
-import os
-import time
 from config import *
-from web3 import Web3
-from web3.contract import Contract
-from web3.middleware import geth_poa_middleware
-from loguru import logger
-from sys import stderr
-from multiprocessing.dummy import Pool
-from dotenv import load_dotenv
-
-load_dotenv()
-BUNGEE_ETH_ROUNER = os.getenv('BUNGEE_ETH_ROUNER')
-BUNGEE_ARB_ROUNER = os.getenv('BUNGEE_ARB_ROUNER')
-BUNGEE_OPT_ROUTER = os.getenv('BUNGEE_OPT_ROUTER')
-BUNGEE_BSC_ROUTER = os.getenv('BUNGEE_BSC_ROUTER')
-BUNGEE_MATIC_ROUNER = os.getenv('BUNGEE_MATIC_ROUNER')
-BUNGEE_FTM_ROUNER = os.getenv('BUNGEE_FTM_ROUNER')
-
-RPC_ETH = os.getenv('RPC_ETH')
-RPC_ARB = os.getenv('RPC_ARB')
-RPC_OPT = os.getenv('RPC_OPT')
-RPC_BSC = os.getenv('RPC_BSC')
-RPC_MATIC =  os.getenv('RPC_MATIC')
-RPC_FTM =  os.getenv('RPC_FTM')
 
 logger.remove()
 logger.add(stderr, format="<white>{time:HH:mm:ss}</white>"
@@ -202,7 +177,7 @@ if __name__ == '__main__':
          chainId = 250
          rpc = RPC_FTM
          contract = BUNGEE_FTM_ROUNER
-         tx_explorer = EXP_MATIC
+         tx_explorer = EXP_FTM
     print(f'{parent_chain} selected as the initial network to send the gas')
 
     destinationChainId = chainId
@@ -240,7 +215,7 @@ if __name__ == '__main__':
     print('`1` - Send from each address')
     tx_type = input('Enter the required method: ')              
     print(f'Starting to send gas from {parent_chain} в {destination_chain}')
-    print(f'Minimum amount of gas: {gas_amount}')
+    print(f'Minimum amount of gas: {gas_amount} + 30%')
     #print(tx_explorer)
     
     w3 = Web3(Web3.HTTPProvider(rpc))
