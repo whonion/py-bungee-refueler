@@ -16,12 +16,14 @@ BUNGEE_ARB_ROUNER = os.getenv('BUNGEE_ARB_ROUNER')
 BUNGEE_OPT_ROUTER = os.getenv('BUNGEE_OPT_ROUTER')
 BUNGEE_BSC_ROUTER = os.getenv('BUNGEE_BSC_ROUTER')
 BUNGEE_MATIC_ROUNER = os.getenv('BUNGEE_MATIC_ROUNER')
+BUNGEE_FTM_ROUNER = os.getenv('BUNGEE_FTM_ROUNER')
 
 RPC_ETH = os.getenv('RPC_ETH')
 RPC_ARB = os.getenv('RPC_ARB')
 RPC_OPT = os.getenv('RPC_OPT')
 RPC_BSC = os.getenv('RPC_BSC')
 RPC_MATIC =  os.getenv('RPC_MATIC')
+RPC_FTM =  os.getenv('RPC_FTM')
 
 logger.remove()
 logger.add(stderr, format="<white>{time:HH:mm:ss}</white>"
@@ -117,17 +119,19 @@ def send_tx(args):
             'nonce': nonce,
             'gas': gas_limit,
             'gasPrice': gas_price,
-            'value': w3.to_wei(gas_amount,'ether')
+            'value': w3.to_wei((gas_amount*1.25),'ether')
         }
         #recalculate gas
         tx_data = calculateGasPrice(private_key=private_key,tx=tx_data)
         if tx_type == 1:
             transaction = contract_refuel.functions.depositNativeToken(destinationChainId,address).build_transaction(tx_data)
+            
             # Sign the transaction with the receiver's private key
             signed_txn = w3.eth.account.sign_transaction(transaction,private_key=private_key)
             
             # Send the transaction to the network
             tx_hash = w3.eth.send_raw_transaction(signed_txn.rawTransaction)
+
             # Wait for the transaction to be mined
             receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
 
@@ -207,8 +211,8 @@ if __name__ == '__main__':
     #Select sending method     
     print('Выберите метод рассылки газа:')
     tx_type = 0
-    print('`0` - Отправлять с одного адреса(default)')
-    print('`1` - Отправлять с каждого адреса')
+    print("'0' - Отправлять с одного адреса(default)")
+    print("'1' - Отправлять с каждого адреса")
     tx_type = input('Введите требуемый метод: ')              
     print(f'Начинаю отправлять газ из {parent_chain} в {destination_chain}')
     print(f'Минимальное количество газа: {gas_amount}')
