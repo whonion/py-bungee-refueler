@@ -84,7 +84,20 @@ def minGasAmount(parent_chain,destination_chain) -> float:
           
      if (parent_chain == 'MATIC') and (destination_chain == 'BSC'):
           return MIN_MATIC_TO_BSC 
-          
+     
+     # From Fantom
+     if (parent_chain == 'FTM') and (destination_chain == 'ARB'):
+          return MIN_FTM_TO_ARB
+               
+     if (parent_chain == 'FTM') and (destination_chain == 'OPT'):
+          return MIN_FTM_TO_OPT
+               
+     if (parent_chain == 'FTM') and (destination_chain == 'BSC'):
+          return MIN_FTM_TO_BSC
+              
+     if (parent_chain == 'FTM') and (destination_chain == 'MATIC'):
+          return MIN_FTM_TO_MATIC
+            
 def calculateGasPrice(private_key,tx:dict):
         w3 = Web3(Web3.HTTPProvider(rpc))
         w3.middleware_onion.inject(geth_poa_middleware, layer=0)

@@ -16,12 +16,14 @@ BUNGEE_ARB_ROUNER = os.getenv('BUNGEE_ARB_ROUNER')
 BUNGEE_OPT_ROUTER = os.getenv('BUNGEE_OPT_ROUTER')
 BUNGEE_BSC_ROUTER = os.getenv('BUNGEE_BSC_ROUTER')
 BUNGEE_MATIC_ROUNER = os.getenv('BUNGEE_MATIC_ROUNER')
+BUNGEE_FTM_ROUNER = os.getenv('BUNGEE_FTM_ROUNER')
 
 RPC_ETH = os.getenv('RPC_ETH')
 RPC_ARB = os.getenv('RPC_ARB')
 RPC_OPT = os.getenv('RPC_OPT')
 RPC_BSC = os.getenv('RPC_BSC')
 RPC_MATIC =  os.getenv('RPC_MATIC')
+RPC_FTM =  os.getenv('RPC_FTM')
 
 logger.remove()
 logger.add(stderr, format="<white>{time:HH:mm:ss}</white>"
@@ -82,6 +84,19 @@ def minGasAmount(parent_chain,destination_chain) -> float:
           
      if (parent_chain == 'MATIC') and (destination_chain == 'BSC'):
           return MIN_MATIC_TO_BSC 
+     
+     # From Fantom
+     if (parent_chain == 'FTM') and (destination_chain == 'ARB'):
+          return MIN_FTM_TO_ARB
+               
+     if (parent_chain == 'FTM') and (destination_chain == 'OPT'):
+          return MIN_FTM_TO_OPT
+               
+     if (parent_chain == 'FTM') and (destination_chain == 'BSC'):
+          return MIN_FTM_TO_BSC
+              
+     if (parent_chain == 'FTM') and (destination_chain == 'MATIC'):
+          return MIN_FTM_TO_MATIC 
           
 def calculateGasPrice(private_key,tx:dict):
         w3 = Web3(Web3.HTTPProvider(rpc))
@@ -155,6 +170,7 @@ if __name__ == '__main__':
     print('3. OPT')
     print('4. BSC')
     print('5. MATIC')
+    print('6. FTM')
     parent_chain = input('Enter the short name of the chain: ')
     parent_chain = parent_chain.upper()
     if parent_chain == 'ETH':
@@ -182,7 +198,11 @@ if __name__ == '__main__':
          rpc = RPC_MATIC
          contract = BUNGEE_MATIC_ROUNER
          tx_explorer = EXP_MATIC
-
+    elif parent_chain == 'FTM':
+         chainId = 250
+         rpc = RPC_FTM
+         contract = BUNGEE_FTM_ROUNER
+         tx_explorer = EXP_MATIC
     print(f'{parent_chain} selected as the initial network to send the gas')
 
     destinationChainId = chainId
@@ -192,17 +212,26 @@ if __name__ == '__main__':
 
         if destination_chain == 'ETH':
             print(f'{destination_chain} cannot be used as a target chain')
+            
         elif destination_chain == 'ARB':
             destinationChainId = 42161
             gas_amount = minGasAmount(parent_chain,destination_chain)
+
         elif destination_chain == 'OPT':
             destinationChainId = 10
             gas_amount = minGasAmount(parent_chain,destination_chain)
+
         elif destination_chain == 'BSC':
             destinationChainId = 56
             gas_amount = minGasAmount(parent_chain,destination_chain)
+
         elif destination_chain == 'MATIC':
             destinationChainId = 137
+            gas_amount = minGasAmount(parent_chain,destination_chain)
+
+        elif destination_chain == 'FTM':
+            destinationChainId = 250
+            gas_amount = minGasAmount(parent_chain,destination_chain)
 
     #Select sending method     
     print('Select the method of gas sending:')
