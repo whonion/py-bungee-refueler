@@ -277,10 +277,10 @@ if __name__ == '__main__':
             dist_tx_explorer = EXP_AVAX
     #Select sending method     
     tx_type = 0
-    print('Выберите метод рассылки газа:')
-    print("'0' - Отправлять с одного адреса(default)")
-    print("'1' - Отправлять с каждого адреса")
-    tx_type = input('Введите требуемый метод: ')              
+#     print('Выберите метод рассылки газа:')
+#     print("'0' - Отправлять с одного адреса")
+#     print("'1' - Отправлять с каждого адреса(по умолчанию)")
+#     tx_type = input('Введите требуемый метод: ')              
     print(f'Начинаю отправлять газ из {parent_chain} в {destination_chain}')
     print(f'Минимальное количество газа: {gas_amount} + 25%')
     
