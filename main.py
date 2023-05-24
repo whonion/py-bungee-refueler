@@ -142,7 +142,7 @@ def calculateGasPrice(private_key,tx:dict):
 
 def send_tx(args):
     #Function: depositNativeToken(uint256 destinationChainId,address _to)
-    private_key, recipient_address = args
+    private_key, recipient_addresses,tx_type = args
     address = None
     try:
         address = Web3.to_checksum_address(w3.eth.account.from_key(private_key).address)
@@ -159,7 +159,7 @@ def send_tx(args):
         }
         #recalculate gas
         tx_data = calculateGasPrice(private_key=private_key,tx=tx_data)
-        if True:
+        if tx_type == 1:
             transaction = contract_refuel.functions.depositNativeToken(destinationChainId,address).build_transaction(tx_data)
             
             # Sign the transaction with the receiver's private key
@@ -180,9 +180,42 @@ def send_tx(args):
             
             else:
                 raise ValueError(f"Refueling from {address} failed with receipt status {receipt['status']}")
-        elif tx_type == 0:
-            #pass
-            print('Here need implementation sending from one address to recipients...')
+        else:
+          try:
+               address = Web3.to_checksum_address(w3.eth.account.from_key(private_key).address)
+               gas_price = w3.to_wei(str(w3.eth.gas_price), 'wei')
+               gas_limit = 300_000   
+               nonce = w3.eth.get_transaction_count(address)
+               # Prepare the transaction data
+               tx_data = {
+                    #'from': address,
+                    'nonce': nonce,
+                    'gas': gas_limit,
+                    'gasPrice': gas_price,
+                    'value': w3.to_wei((gas_amount*1.25),'ether')
+               }               
+               tx_data = calculateGasPrice(private_key=private_key, tx=tx_data)
+               
+               transaction = contract_refuel.functions.depositNativeToken(destinationChainId, recipient_addresses).build_transaction(tx_data)
+               
+               signed_txn = w3.eth.account.sign_transaction(transaction, private_key=private_key)
+               
+               tx_hash = w3.eth.send_raw_transaction(signed_txn.rawTransaction)
+               
+               receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
+               
+               tx_hash = w3.to_hex(w3.keccak(signed_txn.rawTransaction))
+               
+               if receipt['status'] == 1:
+                    logger.info(f'Refuel from {address} | {tx_explorer}tx/{tx_hash}')
+                    logger.info(f'Waiting for destination chain ({destination_chain}) {dist_tx_explorer}address/{recipient_addresses}/#internaltx')
+               else:
+                    raise ValueError(f"Refueling from {address} to {recipient_addresses} failed with receipt status {receipt['status']}")
+               
+               nonce += 1
+          except Exception as error:
+           logger.error(f'{address} | {error}')
+
     except Exception as error:
         logger.error(f'{address} | {error}')
 
@@ -277,12 +310,12 @@ if __name__ == '__main__':
             dist_tx_explorer = EXP_AVAX
     #Select sending method     
     tx_type = 0
-#     print('Выберите метод рассылки газа:')
-#     print("'0' - Отправлять с одного адреса")
-#     print("'1' - Отправлять с каждого адреса(по умолчанию)")
-#     tx_type = input('Введите требуемый метод: ')          
+    print('Select sending method:')
+    print("'0' - Send from one address(for recipients)")
+    print("'1' - Send frome same address/self (default)")
+    tx_type = input('Input requiered method: ')          
     print(f'Starting send Gas from {parent_chain} to {destination_chain}')
-    print(f'Minimum Gas amount: {gas_amount} + 25%')
+    print(f'Minimum Gas amount: {gas_amount} {destination_chain} + 25%')
     
     w3 = Web3(Web3.HTTPProvider(rpc))
     w3.middleware_onion.inject(geth_poa_middleware, layer=0)
@@ -304,7 +337,7 @@ if __name__ == '__main__':
     processed_addresses = 0
     while processed_addresses < num_wallets:
         with Pool(processes=len(private_keys)) as executor:
-            args = zip(private_keys[processed_addresses:], [recipient_addresses] * (num_wallets - processed_addresses))
+            args = zip(private_keys[processed_addresses:], [recipient_addresses] * (num_wallets - processed_addresses), [tx_type] * (num_wallets - processed_addresses))
             executor.map(send_tx, args)
         processed_addresses += num_wallets - processed_addresses
 
