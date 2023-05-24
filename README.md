@@ -51,7 +51,7 @@ pip install -r requierements.txt
 - Add your private keys to the `accounts.txt` file;
 - Add your RPCs to the `.env' file;
 - Add recipient addresses to `recipient_addresses.txt` for receive in the target network's native token on another address;<br/>
-- Run `main.py` nd follow the script prompts.
+- Run `main.py` and follow the script prompts.
 
 _for Windows_
 
