@@ -18,7 +18,12 @@ def minGasAmount(parent_chain,destination_chain) -> float:
           return MIN_ETH_TO_BSC 
      
      if (parent_chain == 'ETH') and (destination_chain == 'MATIC'):
-          return MIN_ETH_TO_MATIC 
+          return MIN_ETH_TO_MATIC
+      
+     if (parent_chain == 'ETH') and (destination_chain == 'FTM'):
+          return MIN_ETH_TO_FTM 
+     if (parent_chain == 'ETH') and (destination_chain == 'AVAX'):
+          return MIN_ETH_TO_AVAX 
      
      # From Arbitrum    
      if (parent_chain == 'ARB') and (destination_chain == 'OPT'):
@@ -28,7 +33,13 @@ def minGasAmount(parent_chain,destination_chain) -> float:
           return MIN_ARB_TO_BSC 
           
      if (parent_chain == 'ARB') and (destination_chain == 'MATIC'):
-          return MIN_ARB_TO_MATIC 
+          return MIN_ARB_TO_MATIC
+      
+     if (parent_chain == 'ARB') and (destination_chain == 'FTM'):
+          return MIN_ARB_TO_FTM
+     
+     if (parent_chain == 'ARB') and (destination_chain == 'AVAX'):
+          return MIN_ARB_TO_AVAX
      
      # From Optimism    
      if (parent_chain == 'OPT') and (destination_chain == 'ARB'):
@@ -38,7 +49,13 @@ def minGasAmount(parent_chain,destination_chain) -> float:
           return MIN_OPT_TO_BSC 
           
      if (parent_chain == 'OPT') and (destination_chain == 'MATIC'):
-          return MIN_OPT_TO_MATIC 
+          return MIN_OPT_TO_MATIC
+      
+     if (parent_chain == 'OPT') and (destination_chain == 'FTM'):
+          return MIN_OPT_TO_FTM
+      
+     if (parent_chain == 'OPT') and (destination_chain == 'AVAX'):
+          return MIN_OPT_TO_AVAX 
      
      # From BNB Chain    
      if (parent_chain == 'BSC') and (destination_chain == 'ARB'):
@@ -48,7 +65,13 @@ def minGasAmount(parent_chain,destination_chain) -> float:
           return MIN_BSC_TO_OPT 
           
      if (parent_chain == 'BSC') and (destination_chain == 'MATIC'):
-          return MIN_BSC_TO_MATIC 
+          return MIN_BSC_TO_MATIC
+      
+     if (parent_chain == 'BSC') and (destination_chain == 'FTM'):
+          return MIN_BSC_TO_FTM
+      
+     if (parent_chain == 'BSC') and (destination_chain == 'AVAX'):
+          return MIN_BSC_TO_AVAX 
      
      # From Polygon 
      if (parent_chain == 'MATIC') and (destination_chain == 'ARB'):
@@ -59,6 +82,12 @@ def minGasAmount(parent_chain,destination_chain) -> float:
           
      if (parent_chain == 'MATIC') and (destination_chain == 'BSC'):
           return MIN_MATIC_TO_BSC 
+     
+     if (parent_chain == 'MATIC') and (destination_chain == 'FTM'):
+          return MIN_MATIC_TO_FTM
+      
+     if (parent_chain == 'MATIC') and (destination_chain == 'AVAX'):
+          return MIN_MATIC_AVAX
      
      # From Fantom
      if (parent_chain == 'FTM') and (destination_chain == 'ARB'):
@@ -71,8 +100,27 @@ def minGasAmount(parent_chain,destination_chain) -> float:
           return MIN_FTM_TO_BSC
               
      if (parent_chain == 'FTM') and (destination_chain == 'MATIC'):
-          return MIN_FTM_TO_MATIC 
-          
+          return MIN_FTM_TO_MATIC
+     
+     if (parent_chain == 'FTM') and (destination_chain == 'AVAX'):
+          return MIN_FTM_TO_AVAX
+
+     # From AVAX
+     if (parent_chain == 'AVAX') and (destination_chain == 'ARB'):
+          return MIN_AVAX_TO_ARB
+               
+     if (parent_chain == 'AVAX') and (destination_chain == 'OPT'):
+          return MIN_AVAX_TO_OPT
+               
+     if (parent_chain == 'AVAX') and (destination_chain == 'BSC'):
+          return MIN_AVAX_TO_BSC
+              
+     if (parent_chain == 'AVAX') and (destination_chain == 'MATIC'):
+          return MIN_AVAX_TO_MATIC
+     
+     if (parent_chain == 'AVAX') and (destination_chain == 'FTM'):
+          return MIN_AVAX_TO_FTM
+            
 def calculateGasPrice(private_key,tx:dict):
         w3 = Web3(Web3.HTTPProvider(rpc))
         w3.middleware_onion.inject(geth_poa_middleware, layer=0)
@@ -84,7 +132,7 @@ def calculateGasPrice(private_key,tx:dict):
             'nonce': nonce,
             'gas': gas_limit,
             'gasPrice': gas_price,
-            'value': w3.to_wei(gas_amount,'ether')
+            'value': w3.to_wei((gas_amount *1.3),'ether')
         }              
         estimated_gas = w3.eth.estimate_gas(tx)
         gas_limit = int(estimated_gas * 1.3)
@@ -107,17 +155,19 @@ def send_tx(args):
             'nonce': nonce,
             'gas': gas_limit,
             'gasPrice': gas_price,
-            'value': w3.to_wei(gas_amount,'ether')
+            'value': w3.to_wei((gas_amount*1.25),'ether')
         }
         #recalculate gas
         tx_data = calculateGasPrice(private_key=private_key,tx=tx_data)
-        if tx_type == 1:
+        if True:
             transaction = contract_refuel.functions.depositNativeToken(destinationChainId,address).build_transaction(tx_data)
+            
             # Sign the transaction with the receiver's private key
             signed_txn = w3.eth.account.sign_transaction(transaction,private_key=private_key)
             
             # Send the transaction to the network
             tx_hash = w3.eth.send_raw_transaction(signed_txn.rawTransaction)
+
             # Wait for the transaction to be mined
             receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
 
@@ -125,7 +175,8 @@ def send_tx(args):
 
             # Check if the transaction was successful
             if receipt['status'] == 1:
-                logger.info(f'Refueling from {address} | {tx_explorer}{tx_hash} Waiting for destination chain ({destination_chain})')
+                logger.info(f'Refueling from {address} | {tx_explorer}tx/{tx_hash}')
+                logger.info(f'Waiting for destination chain ({destination_chain}) {dist_tx_explorer}address/{address}/#internaltx')
             
             else:
                 raise ValueError(f"Refueling from {address} failed with receipt status {receipt['status']}")
@@ -139,14 +190,15 @@ if __name__ == '__main__':
     print('-' * 108)
     print((' '*32)+'BUNGEE BATCH REFUELER'+(' '*32))
     print('-' * 108)
-    print('Select the network from which Gas will be sent:')
+    print('Select origin chain:')
     print('1. ETH')
     print('2. ARB')
     print('3. OPT')
     print('4. BSC')
     print('5. MATIC')
     print('6. FTM')
-    parent_chain = input('Enter the short name of the chain: ')
+    print('7. AVAX')
+    parent_chain = input('Input shor name of chain(ETH,ARB etc.): ')
     parent_chain = parent_chain.upper()
     if parent_chain == 'ETH':
          chainId = 1
@@ -178,45 +230,59 @@ if __name__ == '__main__':
          rpc = RPC_FTM
          contract = BUNGEE_FTM_ROUNER
          tx_explorer = EXP_FTM
-    print(f'{parent_chain} selected as the initial network to send the gas')
+    elif parent_chain == 'AVAX':
+         chainId = 43114
+         rpc = RPC_AVAX
+         contract = BUNGEE_AVAX_ROUNER
+         tx_explorer = EXP_AVAX
+
+    print(f'{parent_chain} selected like parent chain')
 
     destinationChainId = chainId
     while (destinationChainId ==  chainId):
-        destination_chain = input(f'Select a destination chain(ETH or {parent_chain} can not be selected): ')
+        destination_chain = input(f'Select target chain (ETH and {parent_chain} can not be select): ')
         destination_chain = destination_chain.upper()
 
         if destination_chain == 'ETH':
-            print(f'{destination_chain} cannot be used as a target chain')
+            print(f'{destination_chain} can not be select like destination chain')
             
         elif destination_chain == 'ARB':
             destinationChainId = 42161
             gas_amount = minGasAmount(parent_chain,destination_chain)
+            dist_tx_explorer = EXP_ARB
 
         elif destination_chain == 'OPT':
             destinationChainId = 10
             gas_amount = minGasAmount(parent_chain,destination_chain)
+            dist_tx_explorer = EXP_OPT
 
         elif destination_chain == 'BSC':
             destinationChainId = 56
             gas_amount = minGasAmount(parent_chain,destination_chain)
+            dist_tx_explorer = EXP_BSC
 
         elif destination_chain == 'MATIC':
             destinationChainId = 137
             gas_amount = minGasAmount(parent_chain,destination_chain)
+            dist_tx_explorer = EXP_MATIC
 
         elif destination_chain == 'FTM':
             destinationChainId = 250
             gas_amount = minGasAmount(parent_chain,destination_chain)
+            dist_tx_explorer = EXP_FTM
 
+        elif destination_chain == 'AVAX':
+            destinationChainId = 43114
+            gas_amount = minGasAmount(parent_chain,destination_chain)
+            dist_tx_explorer = EXP_AVAX
     #Select sending method     
-    print('Select the method of gas sending:')
     tx_type = 0
-    print('`0` - Send from the same address(default)')
-    print('`1` - Send from each address')
-    tx_type = input('Enter the required method: ')              
-    print(f'Starting to send gas from {parent_chain} в {destination_chain}')
-    print(f'Minimum amount of gas: {gas_amount} + 30%')
-    #print(tx_explorer)
+    print('Select sending method:')
+    print("'0' - Send from one address(default)")
+    print("'1' - Send from each address")
+    tx_type = input('Input reqiered method: ')              
+    print(f'Starting send Gas from {parent_chain} to {destination_chain}')
+    print(f'Minimum Gas amount: {gas_amount} + 25%')
     
     w3 = Web3(Web3.HTTPProvider(rpc))
     w3.middleware_onion.inject(geth_poa_middleware, layer=0)
@@ -241,4 +307,5 @@ if __name__ == '__main__':
             args = zip(private_keys[processed_addresses:], [recipient_addresses] * (num_wallets - processed_addresses))
             executor.map(send_tx, args)
         processed_addresses += num_wallets - processed_addresses
+
     input('Press any key to exit..')
