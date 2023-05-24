@@ -331,7 +331,7 @@ if __name__ == '__main__':
 #     print("'1' - Send frome same address/self (default)")
 #     tx_type = input('Input requiered method: ')          
     print(f'Starting send Gas from {parent_chain} to {destination_chain}')
-    print(f'Minimum Gas amount: {gas_amount} {destination_chain} + 25%')
+    print(f'Minimum Gas amount: {gas_amount} {parent_chain} + 25%')
     
     w3 = Web3(Web3.HTTPProvider(rpc))
     w3.middleware_onion.inject(geth_poa_middleware, layer=0)

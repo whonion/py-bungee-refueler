@@ -231,7 +231,7 @@ def send_tx(args):
      #       logger.error(f'{address} | {error}')
 
     except Exception as error:
-        logger.error(f'{address} | {error} | {gas_limit}) ')
+        logger.error(f'{address} | {error}) ')
 
 if __name__ == '__main__':
     print('-' * 108)
@@ -287,7 +287,7 @@ if __name__ == '__main__':
 
     destinationChainId = chainId
     while (destinationChainId ==  chainId):
-        destination_chain = input(f'Выберете сеть назначения (ETH и {parent_chain} не могут быть выбраны): ')
+        destination_chain = input(f'Выберите сеть назначения (ETH и {parent_chain} не могут быть выбраны): ')
         destination_chain = destination_chain.upper()
 
         if destination_chain == chainId:
@@ -332,7 +332,7 @@ if __name__ == '__main__':
 #     print("'1' - Отправлять с каждого адреса/себе (по умолчанию)")
 #     tx_type = input('Введите выбранный метод: ')          
     print(f'Начинаю отправлять газ из {parent_chain} в {destination_chain}')
-    print(f'Минимальная сумма отправки: {gas_amount} {destination_chain} + 25%')
+    print(f'Минимальная сумма отправки: {gas_amount} {parent_chain} + 25%')
     
     w3 = Web3(Web3.HTTPProvider(rpc))
     w3.middleware_onion.inject(geth_poa_middleware, layer=0)
