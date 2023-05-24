@@ -1,6 +1,13 @@
 # py-bungee-refueler
+Batch send gas-token  with Socket<br>
+
+`main.py` preview<br>
+
 ![py-bungee-refueler](https://github.com/whonion/py-bungee-refueler/blob/main/py-bungee-refueler.png?raw=true)
-Batch send gas-token  with Socket
+
+`main_ru.py` preview<br>
+
+![py-bungee-refueler-ru](https://github.com/whonion/py-bungee-refueler/blob/main/py-bungee-refueler-ru.png?raw=true)
 
 ## Package description
 
