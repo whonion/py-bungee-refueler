@@ -190,7 +190,7 @@ if __name__ == '__main__':
     print('-' * 108)
     print((' '*32)+'BUNGEE BATCH REFUELER'+(' '*32))
     print('-' * 108)
-    print('Выберите сеть отправки:')
+    print('Select origin chain:')
     print('1. ETH')
     print('2. ARB')
     print('3. OPT')
@@ -198,7 +198,7 @@ if __name__ == '__main__':
     print('5. MATIC')
     print('6. FTM')
     print('7. AVAX')
-    parent_chain = input('Введите короткое название сети: ')
+    parent_chain = input('Input short name of chain(ETH,ARB etc.): ')
     parent_chain = parent_chain.upper()
     if parent_chain == 'ETH':
          chainId = 1
@@ -236,15 +236,15 @@ if __name__ == '__main__':
          contract = BUNGEE_AVAX_ROUNER
          tx_explorer = EXP_AVAX
 
-    print(f'{parent_chain} выбрана в качестве исходной сети для отправки газа')
+    print(f'{parent_chain} selected like origin chain')
 
     destinationChainId = chainId
     while (destinationChainId ==  chainId):
-        destination_chain = input(f'Выберите сеть назначения(ETH и {parent_chain} не могут быть выбраны): ')
+        destination_chain = input(f'Select target chain (ETH and {parent_chain} can not be select): ')
         destination_chain = destination_chain.upper()
 
         if destination_chain == 'ETH':
-            print(f'{destination_chain} не может быть выбрана в качестве сети назначения')
+            print(f'{destination_chain} can not be select like destination chain')
             
         elif destination_chain == 'ARB':
             destinationChainId = 42161
@@ -277,12 +277,12 @@ if __name__ == '__main__':
             dist_tx_explorer = EXP_AVAX
     #Select sending method     
     tx_type = 0
-    print('Выберите метод рассылки газа:')
-    print("'0' - Отправлять с одного адреса(default)")
-    print("'1' - Отправлять с каждого адреса")
-    tx_type = input('Введите требуемый метод: ')              
-    print(f'Начинаю отправлять газ из {parent_chain} в {destination_chain}')
-    print(f'Минимальное количество газа: {gas_amount} + 25%')
+    print('Select sending method:')
+    print("'0' - Send from one address(default)")
+    print("'1' - Send from each address")
+    tx_type = input('Input reqiered method: ')              
+    print(f'Starting send Gas from {parent_chain} to {destination_chain}')
+    print(f'Minimum Gas amount: {gas_amount} + 25%')
     
     w3 = Web3(Web3.HTTPProvider(rpc))
     w3.middleware_onion.inject(geth_poa_middleware, layer=0)
@@ -299,7 +299,7 @@ if __name__ == '__main__':
     with open('accounts.txt', encoding='utf-8-sig') as file:
         private_keys = [row.strip() for row in file]
     num_wallets = len(private_keys)
-    logger.info(f'Загружено {num_wallets} кошельков')
+    logger.info(f'Loaded {num_wallets} wallets')
 
     processed_addresses = 0
     while processed_addresses < num_wallets:
@@ -308,4 +308,4 @@ if __name__ == '__main__':
             executor.map(send_tx, args)
         processed_addresses += num_wallets - processed_addresses
 
-    input('Для выхода нажмите любую клавишу..')
+    input('Press any key to exit..')
