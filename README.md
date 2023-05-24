@@ -6,6 +6,7 @@ Batch send gas-token  with Socket
 
 - `main.py` - main module for execute;
 - `config.py` - module containing the required imports, settings of minimum amounts to send, url-addresses of block explorers;
+- `ABI/socket.json` - ABI of Socket GasMovr contract;
 - `main_ru.py` - main module for execute(russian localization).
 
 ## Description of required files
@@ -39,17 +40,20 @@ RPC_AVAX = 'https://avalanche-c-chain.publicnode.com' #43114
 
 ## How run
 
-- Install Python to your system
-- Install dependencies
+- Install Python to your system;
+- Activate the Python Virtual Environment (recommended);
+- Install dependencies.
 
 ```sh
 pip install -r requierements.txt
 ```
 
-- Add your private keys to the `accounts.txt` file
-- Add your RPCs to the `.env' file
-- Add recipient addresses to `recipient_addresses.txt` for receive in the target network's native token on another address   <br/>
-- Run `main.py` nd follow the script prompts
+- Add your private keys to the `accounts.txt` file;
+- Add your RPCs to the `.env' file;
+- Add recipient addresses to `recipient_addresses.txt` for receive in the target network's native token on another address;<br/>
+- Run `main.py` nd follow the script prompts.
+
+_for Windows_
 
 ```sh
 python .\main.py
@@ -59,6 +63,4 @@ _for Linux_
 
 ```sh
 python3 ./main.py
-```
-
 ```
