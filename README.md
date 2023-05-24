@@ -12,7 +12,7 @@ Batch send gas-token  with Socket
 ## Description of required files
 
 - `accounts.txt` - private keys of wallets
-- `recipient_addresses.txt` - addresses of recipient (if you want to send to another address)
+- ~~`recipient_addresses.txt` - addresses of recipient (if you want to send to another address)~~
 - `.env` - the file with your RPC variables and contract address of Socket GasMovr
 
 _example of `.env`-file_
