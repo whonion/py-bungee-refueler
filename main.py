@@ -120,19 +120,33 @@ def minGasAmount(parent_chain,destination_chain) -> float:
      
      if (parent_chain == 'AVAX') and (destination_chain == 'FTM'):
           return MIN_AVAX_TO_FTM
-            
+def getGasLimit(chain:str)->int:
+     if chain == 'ETH':
+          return 21000
+     elif chain == 'ARB':
+          return 3000000
+     elif chain == 'OPT':
+          return 50000
+     elif chain == 'BSC':
+          return 100000
+     elif chain == 'MATIC':
+          return 100000
+     elif chain == 'FTM':
+          return 700000
+     elif chain == 'AVAX':
+          return 1000000          
 def calculateGasPrice(private_key,tx:dict):
         w3 = Web3(Web3.HTTPProvider(rpc))
         w3.middleware_onion.inject(geth_poa_middleware, layer=0)
         address = Web3.to_checksum_address(w3.eth.account.from_key(private_key).address)
         gas_price = w3.to_wei(str(w3.eth.gas_price), 'wei')
-        gas_limit = 900_000   
+        gas_limit = getGasLimit(parent_chain)   
         nonce = w3.eth.get_transaction_count(address)
         tx = {
             'nonce': nonce,
             'gas': gas_limit,
             'gasPrice': gas_price,
-            'value': w3.to_wei((gas_amount *1.3),'ether')
+            'value': w3.to_wei((gas_amount *1.25),'ether')
         }              
         estimated_gas = w3.eth.estimate_gas(tx)
         gas_limit = int(estimated_gas * 1.3)
@@ -142,12 +156,12 @@ def calculateGasPrice(private_key,tx:dict):
 
 def send_tx(args):
     #Function: depositNativeToken(uint256 destinationChainId,address _to)
-    private_key, recipient_addresses,tx_type = args
+    private_key = args #recipient_addresses(this implementation has been remove)
     address = None
     try:
         address = Web3.to_checksum_address(w3.eth.account.from_key(private_key).address)
         gas_price = w3.to_wei(str(w3.eth.gas_price), 'wei')
-        gas_limit = 300_000   
+        gas_limit = getGasLimit(parent_chain)   
         nonce = w3.eth.get_transaction_count(address)
         # Prepare the transaction data
         tx_data = {
@@ -159,7 +173,7 @@ def send_tx(args):
         }
         #recalculate gas
         tx_data = calculateGasPrice(private_key=private_key,tx=tx_data)
-        if tx_type == 1:
+        if True:#tx_type == 1:
             transaction = contract_refuel.functions.depositNativeToken(destinationChainId,address).build_transaction(tx_data)
             
             # Sign the transaction with the receiver's private key
@@ -180,41 +194,41 @@ def send_tx(args):
             
             else:
                 raise ValueError(f"Refueling from {address} failed with receipt status {receipt['status']}")
-        else:
-          try:
-               address = Web3.to_checksum_address(w3.eth.account.from_key(private_key).address)
-               gas_price = w3.to_wei(str(w3.eth.gas_price), 'wei')
-               gas_limit = 300_000   
-               nonce = w3.eth.get_transaction_count(address)
-               # Prepare the transaction data
-               tx_data = {
-                    #'from': address,
-                    'nonce': nonce,
-                    'gas': gas_limit,
-                    'gasPrice': gas_price,
-                    'value': w3.to_wei((gas_amount*1.25),'ether')
-               }               
-               tx_data = calculateGasPrice(private_key=private_key, tx=tx_data)
+     #    else:
+     #      try:
+     #           address = Web3.to_checksum_address(w3.eth.account.from_key(private_key).address)
+     #           gas_price = w3.to_wei(str(w3.eth.gas_price), 'wei')
+     #           gas_limit = getGasLimit(parent_chain)   
+     #           nonce = w3.eth.get_transaction_count(address)
+     #           # Prepare the transaction data
+     #           tx_data = {
+     #                #'from': address,
+     #                'nonce': nonce,
+     #                'gas': gas_limit,
+     #                'gasPrice': gas_price,
+     #                'value': w3.to_wei((gas_amount*1.25),'ether')
+     #           }               
+     #           tx_data = calculateGasPrice(private_key=private_key, tx=tx_data)
                
-               transaction = contract_refuel.functions.depositNativeToken(destinationChainId, recipient_addresses).build_transaction(tx_data)
+     #           transaction = contract_refuel.functions.depositNativeToken(destinationChainId, recipient_addresses).build_transaction(tx_data)
                
-               signed_txn = w3.eth.account.sign_transaction(transaction, private_key=private_key)
+     #           signed_txn = w3.eth.account.sign_transaction(transaction, private_key=private_key)
                
-               tx_hash = w3.eth.send_raw_transaction(signed_txn.rawTransaction)
+     #           tx_hash = w3.eth.send_raw_transaction(signed_txn.rawTransaction)
                
-               receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
+     #           receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
                
-               tx_hash = w3.to_hex(w3.keccak(signed_txn.rawTransaction))
+     #           tx_hash = w3.to_hex(w3.keccak(signed_txn.rawTransaction))
                
-               if receipt['status'] == 1:
-                    logger.info(f'Refuel from {address} | {tx_explorer}tx/{tx_hash}')
-                    logger.info(f'Waiting for destination chain ({destination_chain}) {dist_tx_explorer}address/{recipient_addresses}/#internaltx')
-               else:
-                    raise ValueError(f"Refueling from {address} to {recipient_addresses} failed with receipt status {receipt['status']}")
+     #           if receipt['status'] == 1:
+     #                logger.info(f'Refuel from {address} | {tx_explorer}tx/{tx_hash}')
+     #                logger.info(f'Waiting for destination chain ({destination_chain}) {dist_tx_explorer}address/{recipient_addresses}/#internaltx')
+     #           else:
+     #                raise ValueError(f"Refueling from {address} to {recipient_addresses} failed with receipt status {receipt['status']}")
                
-               nonce += 1
-          except Exception as error:
-           logger.error(f'{address} | {error}')
+     #           nonce += 1
+     #      except Exception as error:
+     #       logger.error(f'{address} | {error}')
 
     except Exception as error:
         logger.error(f'{address} | {error}')
@@ -276,6 +290,8 @@ if __name__ == '__main__':
         destination_chain = input(f'Select target chain (ETH and {parent_chain} can not be select): ')
         destination_chain = destination_chain.upper()
 
+        if destination_chain == chainId:
+            print(f'origin chain {destination_chain} can not be select like destination chain')        
         if destination_chain == 'ETH':
             print(f'{destination_chain} can not be select like destination chain')
             
@@ -309,19 +325,19 @@ if __name__ == '__main__':
             gas_amount = minGasAmount(parent_chain,destination_chain)
             dist_tx_explorer = EXP_AVAX
     #Select sending method     
-    tx_type = 0
-    print('Select sending method:')
-    print("'0' - Send from one address(for recipients)")
-    print("'1' - Send frome same address/self (default)")
-    tx_type = input('Input requiered method: ')          
+#     tx_type = 0
+#     print('Select sending method:')
+#     print("'0' - Send from one address(for recipients)")
+#     print("'1' - Send frome same address/self (default)")
+#     tx_type = input('Input requiered method: ')          
     print(f'Starting send Gas from {parent_chain} to {destination_chain}')
     print(f'Minimum Gas amount: {gas_amount} {destination_chain} + 25%')
     
     w3 = Web3(Web3.HTTPProvider(rpc))
     w3.middleware_onion.inject(geth_poa_middleware, layer=0)
     #Loads recipient_addresses
-    with open('recipient_addresses.txt', 'r', encoding='utf-8-sig') as file:
-            recipient_addresses = file.read().strip().replace('\n', '').replace(' ', '')  
+#     with open('recipient_addresses.txt', 'r', encoding='utf-8-sig') as file:
+#             recipient_addresses = file.read().strip().replace('\n', '').replace(' ', '')  
     #Loads ABI for contracts
     with open('ABI/socket.json', 'r', encoding='utf-8-sig') as file:
             SOCKET_ABI = file.read().strip().replace('\n', '').replace(' ', '')   
@@ -337,8 +353,7 @@ if __name__ == '__main__':
     processed_addresses = 0
     while processed_addresses < num_wallets:
         with Pool(processes=len(private_keys)) as executor:
-            args = zip(private_keys[processed_addresses:], [recipient_addresses] * (num_wallets - processed_addresses), [tx_type] * (num_wallets - processed_addresses))
-            executor.map(send_tx, args)
+            executor.map(send_tx, private_keys)
         processed_addresses += num_wallets - processed_addresses
 
     input('Press any key to exit..')
