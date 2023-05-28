@@ -1,5 +1,6 @@
 # Setup venv
-#python -m virtualenv venv
+# python -m virtualenv venv
 Web3==6.0.0
 python-dotenv
 loguru
+requests

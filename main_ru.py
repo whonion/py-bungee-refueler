@@ -1,140 +1,126 @@
 from config import *
-
 logger.remove()
 logger.add(stderr, format="<white>{time:HH:mm:ss}</white>"
                           " | <level>{level: <8}</level>"
                           " | <cyan>{line}</cyan>"
                           " - <white>{message}</white>")
 
-def minGasAmount(parent_chain,destination_chain) -> float:
+def minGasAmount(parent_chain, destination_chain) -> float:
      # From Ethereum
      if (parent_chain == 'ETH') and (destination_chain == 'ARB'):
-          return MIN_ETH_TO_ARB 
+          return min_eth_to_arb 
      
      if (parent_chain == 'ETH') and (destination_chain == 'OPT'):
-          return MIN_ETH_TO_OPT 
+          return min_eth_to_opt 
         
      if (parent_chain == 'ETH') and (destination_chain == 'BSC'):
-          return MIN_ETH_TO_BSC 
+          return min_eth_to_bsc 
      
      if (parent_chain == 'ETH') and (destination_chain == 'MATIC'):
-          return MIN_ETH_TO_MATIC
+          return min_eth_to_matic
       
-     if (parent_chain == 'ETH') and (destination_chain == 'FTM'):
-          return MIN_ETH_TO_FTM 
+     # if (parent_chain == 'ETH') and (destination_chain == 'FTM'):
+     #      return min_eth_to_ftm 
+     
      if (parent_chain == 'ETH') and (destination_chain == 'AVAX'):
-          return MIN_ETH_TO_AVAX 
+          return min_eth_to_avax 
      
      # From Arbitrum    
      if (parent_chain == 'ARB') and (destination_chain == 'OPT'):
-          return MIN_ARB_TO_OPT 
+          return min_arb_to_opt 
           
      if (parent_chain == 'ARB') and (destination_chain == 'BSC'):
-          return MIN_ARB_TO_BSC 
+          return min_arb_to_bsc 
           
      if (parent_chain == 'ARB') and (destination_chain == 'MATIC'):
-          return MIN_ARB_TO_MATIC
+          return min_arb_to_matic
       
-     if (parent_chain == 'ARB') and (destination_chain == 'FTM'):
-          return MIN_ARB_TO_FTM
+     # if (parent_chain == 'ARB') and (destination_chain == 'FTM'):
+     #      return min_arb_to_ftm
      
      if (parent_chain == 'ARB') and (destination_chain == 'AVAX'):
-          return MIN_ARB_TO_AVAX
+          return min_arb_to_avax
      
      # From Optimism    
      if (parent_chain == 'OPT') and (destination_chain == 'ARB'):
-          return MIN_OPT_TO_ARB 
+          return min_opt_to_arb 
           
      if (parent_chain == 'OPT') and (destination_chain == 'BSC'):
-          return MIN_OPT_TO_BSC 
+          return min_opt_to_bsc 
           
      if (parent_chain == 'OPT') and (destination_chain == 'MATIC'):
-          return MIN_OPT_TO_MATIC
+          return min_opt_to_matic
       
-     if (parent_chain == 'OPT') and (destination_chain == 'FTM'):
-          return MIN_OPT_TO_FTM
+     # if (parent_chain == 'OPT') and (destination_chain == 'FTM'):
+     #      return min_opt_to_ftm
       
      if (parent_chain == 'OPT') and (destination_chain == 'AVAX'):
-          return MIN_OPT_TO_AVAX 
+          return min_opt_to_avax 
      
      # From BNB Chain    
      if (parent_chain == 'BSC') and (destination_chain == 'ARB'):
-          return MIN_BSC_TO_ARB 
+          return min_bsc_to_arb 
           
      if (parent_chain == 'BSC') and (destination_chain == 'OPT'):
-          return MIN_BSC_TO_OPT 
+          return min_bsc_to_opt 
           
      if (parent_chain == 'BSC') and (destination_chain == 'MATIC'):
-          return MIN_BSC_TO_MATIC
+          return min_bsc_to_matic
       
-     if (parent_chain == 'BSC') and (destination_chain == 'FTM'):
-          return MIN_BSC_TO_FTM
+     # if (parent_chain == 'BSC') and (destination_chain == 'FTM'):
+     #      return min_bsc_to_ftm
       
      if (parent_chain == 'BSC') and (destination_chain == 'AVAX'):
-          return MIN_BSC_TO_AVAX 
+          return min_bsc_to_avax 
      
      # From Polygon 
      if (parent_chain == 'MATIC') and (destination_chain == 'ARB'):
-          return MIN_MATIC_TO_ARB 
+          return min_matic_to_arb 
           
      if (parent_chain == 'MATIC') and (destination_chain == 'OPT'):
-          return MIN_MATIC_TO_OPT 
+          return min_matic_to_opt 
           
      if (parent_chain == 'MATIC') and (destination_chain == 'BSC'):
-          return MIN_MATIC_TO_BSC 
+          return min_matic_to_bsc 
      
-     if (parent_chain == 'MATIC') and (destination_chain == 'FTM'):
-          return MIN_MATIC_TO_FTM
+     # if (parent_chain == 'MATIC') and (destination_chain == 'FTM'):
+     #      return min_matic_to_ftm
       
      if (parent_chain == 'MATIC') and (destination_chain == 'AVAX'):
-          return MIN_MATIC_AVAX
+          return min_matic_avax
      
      # From Fantom
-     if (parent_chain == 'FTM') and (destination_chain == 'ARB'):
-          return MIN_FTM_TO_ARB
+     # if (parent_chain == 'FTM') and (destination_chain == 'ARB'):
+     #      return min_ftm_to_arb
                
-     if (parent_chain == 'FTM') and (destination_chain == 'OPT'):
-          return MIN_FTM_TO_OPT
+     # if (parent_chain == 'FTM') and (destination_chain == 'OPT'):
+     #      return min_ftm_to_opt
                
-     if (parent_chain == 'FTM') and (destination_chain == 'BSC'):
-          return MIN_FTM_TO_BSC
-              
-     if (parent_chain == 'FTM') and (destination_chain == 'MATIC'):
-          return MIN_FTM_TO_MATIC
-     
+     # if (parent_chain == 'FTM') and (destination_chain == 'BSC'):
+     #      return min_ftm_to_bsc
+          
+     # if (parent_chain == 'FTM') and (destination_chain == 'MATIC'):
+     #      return min_ftm_to_matic
+
      if (parent_chain == 'FTM') and (destination_chain == 'AVAX'):
-          return MIN_FTM_TO_AVAX
+          return min_ftm_to_avax
 
      # From AVAX
      if (parent_chain == 'AVAX') and (destination_chain == 'ARB'):
-          return MIN_AVAX_TO_ARB
+          return min_avax_to_arb
                
      if (parent_chain == 'AVAX') and (destination_chain == 'OPT'):
-          return MIN_AVAX_TO_OPT
+          return min_avax_to_opt
                
      if (parent_chain == 'AVAX') and (destination_chain == 'BSC'):
-          return MIN_AVAX_TO_BSC
-              
+          return min_avax_to_bsc
+          
      if (parent_chain == 'AVAX') and (destination_chain == 'MATIC'):
-          return MIN_AVAX_TO_MATIC
-     
-     if (parent_chain == 'AVAX') and (destination_chain == 'FTM'):
-          return MIN_AVAX_TO_FTM
-def getGasLimit(chain:str)->int:
-     if chain == 'ETH':
-          return 21_000
-     elif chain == 'ARB':
-          return 3_000_000
-     elif chain == 'OPT':
-          return 50_000
-     elif chain == 'BSC':
-          return 100_000
-     elif chain == 'MATIC':
-          return 100_000
-     elif chain == 'FTM':
-          return 700_000
-     elif chain == 'AVAX':
-          return 1_000_000          
+          return min_avax_to_matic
+
+     # if (parent_chain == 'AVAX') and (destination_chain == 'FTM'):
+     #      return min_avax_to_ftm
+     #          
 def calculateGasPrice(private_key,tx:dict):
         w3 = Web3(Web3.HTTPProvider(rpc))
         w3.middleware_onion.inject(geth_poa_middleware, layer=0)
@@ -146,7 +132,7 @@ def calculateGasPrice(private_key,tx:dict):
             'nonce': nonce,
             'gas': gas_limit,
             'gasPrice': gas_price,
-            'value': w3.to_wei((gas_amount *1.25),'ether')
+            'value': w3.to_wei((gas_amount *1.1),'ether')
         }              
         estimated_gas = w3.eth.estimate_gas(tx)
         gas_limit = int(estimated_gas * 1.3)
@@ -169,7 +155,7 @@ def send_tx(args):
             'nonce': nonce,
             'gas': gas_limit,
             'gasPrice': gas_price,
-            'value': w3.to_wei((gas_amount*1.25),'ether')
+            'value': w3.to_wei((gas_amount*1.1),'ether')
         }
         #recalculate gas
         tx_data = calculateGasPrice(private_key=private_key,tx=tx_data)
@@ -194,41 +180,6 @@ def send_tx(args):
             
             else:
                 raise ValueError(f"Refueling from {address} failed with receipt status {receipt['status']}")
-     #    else:
-     #      try:
-     #           address = Web3.to_checksum_address(w3.eth.account.from_key(private_key).address)
-     #           gas_price = w3.to_wei(str(w3.eth.gas_price), 'wei')
-     #           gas_limit = getGasLimit(parent_chain)   
-     #           nonce = w3.eth.get_transaction_count(address)
-     #           # Prepare the transaction data
-     #           tx_data = {
-     #                #'from': address,
-     #                'nonce': nonce,
-     #                'gas': gas_limit,
-     #                'gasPrice': gas_price,
-     #                'value': w3.to_wei((gas_amount*1.25),'ether')
-     #           }               
-     #           tx_data = calculateGasPrice(private_key=private_key, tx=tx_data)
-               
-     #           transaction = contract_refuel.functions.depositNativeToken(destinationChainId, recipient_addresses).build_transaction(tx_data)
-               
-     #           signed_txn = w3.eth.account.sign_transaction(transaction, private_key=private_key)
-               
-     #           tx_hash = w3.eth.send_raw_transaction(signed_txn.rawTransaction)
-               
-     #           receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
-               
-     #           tx_hash = w3.to_hex(w3.keccak(signed_txn.rawTransaction))
-               
-     #           if receipt['status'] == 1:
-     #                logger.info(f'Refuel from {address} | {tx_explorer}tx/{tx_hash}')
-     #                logger.info(f'Waiting for destination chain ({destination_chain}) {dist_tx_explorer}address/{recipient_addresses}/#internaltx')
-     #           else:
-     #                raise ValueError(f"Refueling from {address} to {recipient_addresses} failed with receipt status {receipt['status']}")
-               
-     #           nonce += 1
-     #      except Exception as error:
-     #       logger.error(f'{address} | {error}')
 
     except Exception as error:
         logger.error(f'{address} | {error}) ')
@@ -238,13 +189,17 @@ if __name__ == '__main__':
     print((' '*32)+'BUNGEE BATCH REFUELER'+(' '*32))
     print('-' * 108)
     print('Выберите исходную сеть для отправки газа:')
-    print('1. ETH')
-    print('2. ARB')
-    print('3. OPT')
-    print('4. BSC')
-    print('5. MATIC')
-    print('6. FTM')
-    print('7. AVAX')
+    print('0. Ethereum(ETH)')
+    print('1. Optimism(OPT)')
+    print('2. BNB Chain(BSC)')
+    print('3. Gnosis(GNO)')
+    print('4. Polygon(Matic)')
+    print('5. zkSync(пока ещё не реализована)')
+    print('6. zkEVM(пока ещё не реализована)')
+    print('7. Arbitrum(ARB)')
+    print('8. Fantom(приостановлена)')
+    print('9. Avalanche C-Chain(AVAX)')
+    print('10. Aurora(AUR)')
     parent_chain = input('Введите короткое имя сети(ETH,ARB etc.): ')
     parent_chain = parent_chain.upper()
     if parent_chain == 'ETH':
@@ -252,11 +207,6 @@ if __name__ == '__main__':
          rpc = RPC_ETH
          contract = BUNGEE_ETH_ROUNER
          tx_explorer = EXP_ETH
-    elif parent_chain == 'ARB':
-         chainId = 42161
-         rpc = RPC_ARB
-         contract = BUNGEE_ARB_ROUNER
-         tx_explorer = EXP_ARB
     elif parent_chain == 'OPT':
          chainId = 10
          rpc = RPC_OPT
@@ -267,22 +217,53 @@ if __name__ == '__main__':
          rpc = RPC_BSC
          contract = BUNGEE_BSC_ROUTER
          tx_explorer = EXP_BSC
+         
+    elif parent_chain == 'GNO':
+         chainId = 100
+         rpc = RPC_GNO
+         contract = BUNGEE_GNO_ROUTER
+         tx_explorer = EXP_GNO
+
     elif parent_chain == 'MATIC':
          chainId = 137
          rpc = RPC_MATIC
          contract = BUNGEE_MATIC_ROUNER
          tx_explorer = EXP_MATIC
-    elif parent_chain == 'FTM':
-         chainId = 250
-         rpc = RPC_FTM
-         contract = BUNGEE_FTM_ROUNER
-         tx_explorer = EXP_FTM
+
+    elif parent_chain == 'ERA':
+         chainId = 1101
+         rpc = RPC_ERA
+         contract = BUNGEE_ERA_ROUNER
+         tx_explorer = EXP_ERA
+
+    elif parent_chain == 'ZKEVM':
+         chainId = 1101
+         rpc = RPC_ZKEVM
+         contract = BUNGEE_ZKEVM_ROUNER
+         tx_explorer = EXP_ZKEVM
+
+    elif parent_chain == 'ARB':
+         chainId = 42161
+         rpc = RPC_ARB
+         contract = BUNGEE_ARB_ROUNER
+         tx_explorer = EXP_ARB
+
     elif parent_chain == 'AVAX':
          chainId = 43114
          rpc = RPC_AVAX
          contract = BUNGEE_AVAX_ROUNER
          tx_explorer = EXP_AVAX
 
+    elif parent_chain == 'AUR':
+         chainId = 1313161554
+         rpc = RPC_AUR
+         contract = BUNGEE_AUR_ROUNER
+         tx_explorer = EXP_AUR         
+#     elif parent_chain == 'FTM':
+#          chainId = 250
+#          rpc = RPC_FTM
+#          contract = BUNGEE_FTM_ROUNER
+#          tx_explorer = EXP_FTM
     print(f'{parent_chain} выбрана в качестве исходной сети')
 
     destinationChainId = chainId
@@ -293,52 +274,65 @@ if __name__ == '__main__':
         if destination_chain == chainId:
             print(f'исходная сеть {destination_chain} не может быть выбрана в качестве сети назначения')
 
-        if destination_chain == 'ETH':
+        elif destination_chain == 'ETH':
             print(f'{destination_chain} не может быть выбрана в качестве сети назначения')
-            
-        elif destination_chain == 'ARB':
-            destinationChainId = 42161
-            gas_amount = minGasAmount(parent_chain,destination_chain)
-            dist_tx_explorer = EXP_ARB
-
+        
         elif destination_chain == 'OPT':
             destinationChainId = 10
             gas_amount = minGasAmount(parent_chain,destination_chain)
             dist_tx_explorer = EXP_OPT
-
+ 
         elif destination_chain == 'BSC':
             destinationChainId = 56
             gas_amount = minGasAmount(parent_chain,destination_chain)
             dist_tx_explorer = EXP_BSC
 
+        elif destination_chain == 'GNO':
+            destinationChainId = 100
+            gas_amount = minGasAmount(parent_chain,destination_chain)
+            dist_tx_explorer = EXP_GNO
+            
         elif destination_chain == 'MATIC':
             destinationChainId = 137
             gas_amount = minGasAmount(parent_chain,destination_chain)
             dist_tx_explorer = EXP_MATIC
 
-        elif destination_chain == 'FTM':
-            destinationChainId = 250
+        elif destination_chain == 'ERA':
+            destinationChainId = 324
             gas_amount = minGasAmount(parent_chain,destination_chain)
-            dist_tx_explorer = EXP_FTM
+            dist_tx_explorer = EXP_ERA
+
+        elif destination_chain == 'ZKEVM':
+            destinationChainId = 1101
+            gas_amount = minGasAmount(parent_chain,destination_chain)
+            dist_tx_explorer = EXP_ZKEVM
+
+        elif destination_chain == 'ARB':
+            destinationChainId = 42161
+            gas_amount = minGasAmount(parent_chain,destination_chain)
+            dist_tx_explorer = EXP_ARB
 
         elif destination_chain == 'AVAX':
             destinationChainId = 43114
             gas_amount = minGasAmount(parent_chain,destination_chain)
             dist_tx_explorer = EXP_AVAX
-    #Select sending method     
-#     tx_type = 0
-#     print('Выберите метод отправки газа:')
-#     print("'0' - Отправка с одного адреса(список получателей)")
-#     print("'1' - Отправлять с каждого адреса/себе (по умолчанию)")
-#     tx_type = input('Введите выбранный метод: ')          
+
+        elif destination_chain == 'AUR':
+            destinationChainId = 1313161554
+            gas_amount = minGasAmount(parent_chain,destination_chain)
+            dist_tx_explorer = EXP_AUR
+            
+     #    elif destination_chain == 'FTM':
+     #        destinationChainId = 250
+     #        gas_amount = minGasAmount(parent_chain,destination_chain)
+     #        dist_tx_explorer = EXP_FTM   
+       
     print(f'Начинаю отправлять газ из {parent_chain} в {destination_chain}')
     print(f'Минимальная сумма отправки: {gas_amount} {parent_chain} + 25%')
     
     w3 = Web3(Web3.HTTPProvider(rpc))
     w3.middleware_onion.inject(geth_poa_middleware, layer=0)
-    #Loads recipient_addresses
-#     with open('recipient_addresses.txt', 'r', encoding='utf-8-sig') as file:
-#             recipient_addresses = file.read().strip().replace('\n', '').replace(' ', '')  
+
     #Loads ABI for contracts
     with open('ABI/socket.json', 'r', encoding='utf-8-sig') as file:
             SOCKET_ABI = file.read().strip().replace('\n', '').replace(' ', '')   

@@ -1,0 +1,739 @@
+{
+    "success": true,
+    "result": [
+        {
+            "name": "Ethereum",
+            "chainId": 1,
+            "icon": "https://movricons.s3.ap-south-1.amazonaws.com/Ether.svg",
+            "nativeAssetIcon": "https://maticnetwork.github.io/polygon-token-assets/assets/eth.svg",
+            "isSendingEnabled": true,
+            "isReceivingEnabled": false,
+            "blockExplorer": "https://etherscan.com",
+            "nativeAsset": "ETH",
+            "gasLimit": "29000",
+            "minFeeMultiplier": 1,
+            "maxFeeMultiplier": 100,
+            "maxAmountCap": {
+                "type": "BigNumber",
+                "hex": "0x6379da05b60000"
+            },
+            "gasMultiplier": 2,
+            "serviceTime": {
+                "from": 300000,
+                "to": 300000
+            },
+            "limits": [
+                {
+                    "chainId": 10,
+                    "isEnabled": true,
+                    "minAmount": "3420609464997376",
+                    "maxAmount": "28000000000000000"
+                },
+                {
+                    "chainId": 56,
+                    "isEnabled": true,
+                    "minAmount": "437996151260640",
+                    "maxAmount": "3503969210085120"
+                },
+                {
+                    "chainId": 100,
+                    "isEnabled": true,
+                    "minAmount": "2231940226470",
+                    "maxAmount": "7439800754900000"
+                },
+                {
+                    "chainId": 137,
+                    "isEnabled": true,
+                    "minAmount": "139930693309100",
+                    "maxAmount": "11194455464728000"
+                },
+                {
+                    "chainId": 324,
+                    "isEnabled": true,
+                    "minAmount": "3305410000000000",
+                    "maxAmount": "13221640000000000"
+                },
+                {
+                    "chainId": 1101,
+                    "isEnabled": true,
+                    "minAmount": "1428242200000000",
+                    "maxAmount": "8569453200000000"
+                },
+                {
+                    "chainId": 42161,
+                    "isEnabled": true,
+                    "minAmount": "2973614000000000",
+                    "maxAmount": "11894456000000000"
+                },
+                {
+                    "chainId": 43114,
+                    "isEnabled": true,
+                    "minAmount": "360955992299400",
+                    "maxAmount": "9023899807485000"
+                },
+                {
+                    "chainId": 1313161554,
+                    "isEnabled": true,
+                    "minAmount": "49000000000000",
+                    "maxAmount": "4900000000000000"
+                }
+            ]
+        },
+        {
+            "name": "Optimism",
+            "chainId": 10,
+            "icon": "https://movricons.s3.ap-south-1.amazonaws.com/Optimism.svg",
+            "nativeAssetIcon": "https://maticnetwork.github.io/polygon-token-assets/assets/eth.svg",
+            "isSendingEnabled": true,
+            "isReceivingEnabled": true,
+            "blockExplorer": "https://optimistic.etherscan.io",
+            "nativeAsset": "ETH",
+            "gasLimit": "29000",
+            "effectiveGas": {
+                "L1": "4500",
+                "L2": "29000"
+            },
+            "minFeeMultiplier": 8,
+            "maxFeeMultiplier": 500,
+            "maxAmountCap": {
+                "type": "BigNumber",
+                "hex": "0x6379da05b60000"
+            },
+            "gasMultiplier": 2,
+            "serviceTime": {
+                "from": 300000,
+                "to": 300000
+            },
+            "limits": [
+                {
+                    "chainId": 56,
+                    "isEnabled": true,
+                    "minAmount": "437996151260640",
+                    "maxAmount": "3503969210085120"
+                },
+                {
+                    "chainId": 100,
+                    "isEnabled": true,
+                    "minAmount": "2231940226470",
+                    "maxAmount": "7439800754900000"
+                },
+                {
+                    "chainId": 137,
+                    "isEnabled": true,
+                    "minAmount": "139930693309100",
+                    "maxAmount": "11194455464728000"
+                },
+                {
+                    "chainId": 324,
+                    "isEnabled": true,
+                    "minAmount": "3305410000000000",
+                    "maxAmount": "13221640000000000"
+                },
+                {
+                    "chainId": 1101,
+                    "isEnabled": true,
+                    "minAmount": "1428242200000000",
+                    "maxAmount": "8569453200000000"
+                },
+                {
+                    "chainId": 42161,
+                    "isEnabled": true,
+                    "minAmount": "2973614000000000",
+                    "maxAmount": "11894456000000000"
+                },
+                {
+                    "chainId": 43114,
+                    "isEnabled": true,
+                    "minAmount": "360955992299400",
+                    "maxAmount": "9023899807485000"
+                },
+                {
+                    "chainId": 1313161554,
+                    "isEnabled": true,
+                    "minAmount": "49000000000000",
+                    "maxAmount": "4900000000000000"
+                }
+            ]
+        },
+        {
+            "name": "BSC",
+            "chainId": 56,
+            "icon": "https://movricons.s3.ap-south-1.amazonaws.com/BSC.svg",
+            "nativeAssetIcon": "https://maticnetwork.github.io/polygon-token-assets/assets/bnb.svg",
+            "isSendingEnabled": true,
+            "isReceivingEnabled": true,
+            "blockExplorer": "https://bscscan.com",
+            "nativeAsset": "BNB",
+            "gasLimit": "28000",
+            "minFeeMultiplier": 5,
+            "maxFeeMultiplier": 40,
+            "maxAmountCap": {
+                "type": "BigNumber",
+                "hex": "0x01f161421c8e0000"
+            },
+            "gasMultiplier": 2,
+            "serviceTime": {
+                "from": 300000,
+                "to": 300000
+            },
+            "limits": [
+                {
+                    "chainId": 10,
+                    "isEnabled": true,
+                    "minAmount": "20450738542900216",
+                    "maxAmount": "167403114872000000"
+                },
+                {
+                    "chainId": 100,
+                    "isEnabled": true,
+                    "minAmount": "13344062361330",
+                    "maxAmount": "44480207871100000"
+                },
+                {
+                    "chainId": 137,
+                    "isEnabled": true,
+                    "minAmount": "836601211592980",
+                    "maxAmount": "66928096927438400"
+                },
+                {
+                    "chainId": 324,
+                    "isEnabled": true,
+                    "minAmount": "19761997497466340",
+                    "maxAmount": "79047989989865360"
+                },
+                {
+                    "chainId": 1101,
+                    "isEnabled": true,
+                    "minAmount": "8539006895415640",
+                    "maxAmount": "51234041372493840"
+                },
+                {
+                    "chainId": 42161,
+                    "isEnabled": true,
+                    "minAmount": "17778294500963830",
+                    "maxAmount": "71113178003855320"
+                },
+                {
+                    "chainId": 43114,
+                    "isEnabled": true,
+                    "minAmount": "2158041337197370",
+                    "maxAmount": "53951033429934250"
+                },
+                {
+                    "chainId": 1313161554,
+                    "isEnabled": true,
+                    "minAmount": "292955451026000",
+                    "maxAmount": "29295545102600000"
+                }
+            ]
+        },
+        {
+            "name": "Gnosis",
+            "chainId": 100,
+            "icon": "https://movricons.s3.ap-south-1.amazonaws.com/gnosis.svg",
+            "nativeAssetIcon": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png",
+            "isSendingEnabled": true,
+            "isReceivingEnabled": true,
+            "blockExplorer": "https://blockscout.com/xdai/mainnet",
+            "nativeAsset": "xDAI",
+            "gasLimit": "29000",
+            "minFeeMultiplier": 15,
+            "maxFeeMultiplier": 50000,
+            "maxAmountCap": {
+                "type": "BigNumber",
+                "hex": "0x022b1c8c1227a00000"
+            },
+            "gasMultiplier": 2,
+            "serviceTime": {
+                "from": 300000,
+                "to": 300000
+            },
+            "limits": [
+                {
+                    "chainId": 10,
+                    "isEnabled": true,
+                    "minAmount": "6302917618488114936",
+                    "maxAmount": "51593640000000000000"
+                },
+                {
+                    "chainId": 56,
+                    "isEnabled": true,
+                    "minAmount": "807064848000000000",
+                    "maxAmount": "6456518784000000000"
+                },
+                {
+                    "chainId": 137,
+                    "isEnabled": true,
+                    "minAmount": "257840493435836290",
+                    "maxAmount": "20627239474866903200"
+                },
+                {
+                    "chainId": 324,
+                    "isEnabled": true,
+                    "minAmount": "6090647628300000000",
+                    "maxAmount": "24362590513200000000"
+                },
+                {
+                    "chainId": 1101,
+                    "isEnabled": true,
+                    "minAmount": "2631721924986000000",
+                    "maxAmount": "15790331549916000000"
+                },
+                {
+                    "chainId": 42161,
+                    "isEnabled": true,
+                    "minAmount": "5479270364820000000",
+                    "maxAmount": "21917081459280000000"
+                },
+                {
+                    "chainId": 43114,
+                    "isEnabled": true,
+                    "minAmount": "665108340074129230",
+                    "maxAmount": "16627708501853230750"
+                },
+                {
+                    "chainId": 1313161554,
+                    "isEnabled": true,
+                    "minAmount": "90288870000000000",
+                    "maxAmount": "9028887000000000000"
+                }
+            ]
+        },
+        {
+            "name": "Polygon",
+            "chainId": 137,
+            "icon": "https://movricons.s3.ap-south-1.amazonaws.com/Matic.svg",
+            "nativeAssetIcon": "https://movricons.s3.ap-south-1.amazonaws.com/Matic.svg",
+            "isSendingEnabled": true,
+            "isReceivingEnabled": true,
+            "blockExplorer": "https://polygonscan.com",
+            "nativeAsset": "MATIC",
+            "gasLimit": "29000",
+            "minFeeMultiplier": 10,
+            "maxFeeMultiplier": 800,
+            "maxAmountCap": {
+                "type": "BigNumber",
+                "hex": "0x01e5b8fa8fe2ac0000"
+            },
+            "gasMultiplier": 2,
+            "serviceTime": {
+                "from": 600000,
+                "to": 300000
+            },
+            "limits": [
+                {
+                    "chainId": 10,
+                    "isEnabled": true,
+                    "minAmount": "6837011265656734440",
+                    "maxAmount": "55965557424000000000"
+                },
+                {
+                    "chainId": 56,
+                    "isEnabled": true,
+                    "minAmount": "875453526506520000",
+                    "maxAmount": "7003628212052160000"
+                },
+                {
+                    "chainId": 100,
+                    "isEnabled": true,
+                    "minAmount": "4461134959747260",
+                    "maxAmount": "14870449865824200000"
+                },
+                {
+                    "chainId": 324,
+                    "isEnabled": true,
+                    "minAmount": "6606754041602280000",
+                    "maxAmount": "26427016166409120000"
+                },
+                {
+                    "chainId": 1101,
+                    "isEnabled": true,
+                    "minAmount": "2854727530695717600",
+                    "maxAmount": "17128365184174305600"
+                },
+                {
+                    "chainId": 42161,
+                    "isEnabled": true,
+                    "minAmount": "5943570181207512000",
+                    "maxAmount": "23774280724830048000"
+                },
+                {
+                    "chainId": 43114,
+                    "isEnabled": true,
+                    "minAmount": "721467975277900740",
+                    "maxAmount": "18036699381947518500"
+                },
+                {
+                    "chainId": 1313161554,
+                    "isEnabled": true,
+                    "minAmount": "97939725492000000",
+                    "maxAmount": "9793972549200000000"
+                }
+            ]
+        },
+        {
+            "name": "zkSync",
+            "chainId": 324,
+            "icon": "https://movricons.s3.ap-south-1.amazonaws.com/zksync-era.svg",
+            "nativeAssetIcon": "https://maticnetwork.github.io/polygon-token-assets/assets/eth.svg",
+            "isSendingEnabled": true,
+            "isReceivingEnabled": true,
+            "blockExplorer": "https://explorer.zksync.io",
+            "nativeAsset": "ETH",
+            "gasLimit": "29000",
+            "minFeeMultiplier": 5,
+            "maxFeeMultiplier": 20,
+            "maxAmountCap": {
+                "type": "BigNumber",
+                "hex": "0x3c6568f12e8000"
+            },
+            "gasMultiplier": 2,
+            "serviceTime": {
+                "from": 300000,
+                "to": 1200000
+            },
+            "limits": [
+                {
+                    "chainId": 10,
+                    "isEnabled": true,
+                    "minAmount": "3420609464997376",
+                    "maxAmount": "28000000000000000"
+                },
+                {
+                    "chainId": 56,
+                    "isEnabled": true,
+                    "minAmount": "437996151260640",
+                    "maxAmount": "3503969210085120"
+                },
+                {
+                    "chainId": 100,
+                    "isEnabled": true,
+                    "minAmount": "2231940226470",
+                    "maxAmount": "7439800754900000"
+                },
+                {
+                    "chainId": 137,
+                    "isEnabled": true,
+                    "minAmount": "139930693309100",
+                    "maxAmount": "11194455464728000"
+                },
+                {
+                    "chainId": 1101,
+                    "isEnabled": true,
+                    "minAmount": "1428242200000000",
+                    "maxAmount": "8569453200000000"
+                },
+                {
+                    "chainId": 42161,
+                    "isEnabled": true,
+                    "minAmount": "2973614000000000",
+                    "maxAmount": "11894456000000000"
+                },
+                {
+                    "chainId": 43114,
+                    "isEnabled": true,
+                    "minAmount": "360955992299400",
+                    "maxAmount": "9023899807485000"
+                },
+                {
+                    "chainId": 1313161554,
+                    "isEnabled": true,
+                    "minAmount": "49000000000000",
+                    "maxAmount": "4900000000000000"
+                }
+            ]
+        },
+        {
+            "name": "zkEVM",
+            "chainId": 1101,
+            "icon": "https://movricons.s3.ap-south-1.amazonaws.com/zkEVM.svg",
+            "nativeAssetIcon": "https://maticnetwork.github.io/polygon-token-assets/assets/eth.svg",
+            "isSendingEnabled": true,
+            "isReceivingEnabled": true,
+            "blockExplorer": "https://zkevm.polygonscan.com",
+            "nativeAsset": "ETH",
+            "gasLimit": "29000",
+            "minFeeMultiplier": 5,
+            "maxFeeMultiplier": 30,
+            "maxAmountCap": {
+                "type": "BigNumber",
+                "hex": "0x6379da05b60000"
+            },
+            "gasMultiplier": 2,
+            "serviceTime": {
+                "from": 300000,
+                "to": 300000
+            },
+            "limits": [
+                {
+                    "chainId": 10,
+                    "isEnabled": true,
+                    "minAmount": "3420609464997376",
+                    "maxAmount": "28000000000000000"
+                },
+                {
+                    "chainId": 56,
+                    "isEnabled": true,
+                    "minAmount": "437996151260640",
+                    "maxAmount": "3503969210085120"
+                },
+                {
+                    "chainId": 100,
+                    "isEnabled": true,
+                    "minAmount": "2231940226470",
+                    "maxAmount": "7439800754900000"
+                },
+                {
+                    "chainId": 137,
+                    "isEnabled": true,
+                    "minAmount": "139930693309100",
+                    "maxAmount": "11194455464728000"
+                },
+                {
+                    "chainId": 324,
+                    "isEnabled": true,
+                    "minAmount": "3305410000000000",
+                    "maxAmount": "13221640000000000"
+                },
+                {
+                    "chainId": 42161,
+                    "isEnabled": true,
+                    "minAmount": "2973614000000000",
+                    "maxAmount": "11894456000000000"
+                },
+                {
+                    "chainId": 43114,
+                    "isEnabled": true,
+                    "minAmount": "360955992299400",
+                    "maxAmount": "9023899807485000"
+                },
+                {
+                    "chainId": 1313161554,
+                    "isEnabled": true,
+                    "minAmount": "49000000000000",
+                    "maxAmount": "4900000000000000"
+                }
+            ]
+        },
+        {
+            "name": "Arbitrum",
+            "chainId": 42161,
+            "icon": "https://movricons.s3.ap-south-1.amazonaws.com/Arbitrum.svg",
+            "nativeAssetIcon": "https://maticnetwork.github.io/polygon-token-assets/assets/eth.svg",
+            "isSendingEnabled": true,
+            "isReceivingEnabled": true,
+            "blockExplorer": "https://arbiscan.io",
+            "nativeAsset": "ETH",
+            "gasLimit": "547515",
+            "minFeeMultiplier": 10,
+            "maxFeeMultiplier": 40,
+            "maxAmountCap": {
+                "type": "BigNumber",
+                "hex": "0x6379da05b60000"
+            },
+            "gasMultiplier": 2,
+            "serviceTime": {
+                "from": 300000,
+                "to": 300000
+            },
+            "limits": [
+                {
+                    "chainId": 10,
+                    "isEnabled": true,
+                    "minAmount": "3420609464997376",
+                    "maxAmount": "28000000000000000"
+                },
+                {
+                    "chainId": 56,
+                    "isEnabled": true,
+                    "minAmount": "437996151260640",
+                    "maxAmount": "3503969210085120"
+                },
+                {
+                    "chainId": 100,
+                    "isEnabled": true,
+                    "minAmount": "2231940226470",
+                    "maxAmount": "7439800754900000"
+                },
+                {
+                    "chainId": 137,
+                    "isEnabled": true,
+                    "minAmount": "139930693309100",
+                    "maxAmount": "11194455464728000"
+                },
+                {
+                    "chainId": 324,
+                    "isEnabled": true,
+                    "minAmount": "3305410000000000",
+                    "maxAmount": "13221640000000000"
+                },
+                {
+                    "chainId": 1101,
+                    "isEnabled": true,
+                    "minAmount": "1428242200000000",
+                    "maxAmount": "8569453200000000"
+                },
+                {
+                    "chainId": 43114,
+                    "isEnabled": true,
+                    "minAmount": "360955992299400",
+                    "maxAmount": "9023899807485000"
+                },
+                {
+                    "chainId": 1313161554,
+                    "isEnabled": true,
+                    "minAmount": "49000000000000",
+                    "maxAmount": "4900000000000000"
+                }
+            ]
+        },
+        {
+            "name": "Avalanche",
+            "chainId": 43114,
+            "icon": "https://static.debank.com/image/chain/logo_url/avax/4d1649e8a0c7dec9de3491b81807d402.png",
+            "nativeAssetIcon": "https://tokens.1inch.io/0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7.png",
+            "isSendingEnabled": true,
+            "isReceivingEnabled": true,
+            "blockExplorer": "https://snowtrace.io",
+            "nativeAsset": "AVAX",
+            "gasLimit": "29000",
+            "minFeeMultiplier": 10,
+            "maxFeeMultiplier": 250,
+            "maxAmountCap": {
+                "type": "BigNumber",
+                "hex": "0x22b1c8c1227a0000"
+            },
+            "gasMultiplier": 2,
+            "serviceTime": {
+                "from": 300000,
+                "to": 300000
+            },
+            "limits": [
+                {
+                    "chainId": 10,
+                    "isEnabled": true,
+                    "minAmount": "435585184443578992",
+                    "maxAmount": "3565559088000000000"
+                },
+                {
+                    "chainId": 56,
+                    "isEnabled": true,
+                    "minAmount": "55775041336058400",
+                    "maxAmount": "446200330688467200"
+                },
+                {
+                    "chainId": 100,
+                    "isEnabled": true,
+                    "minAmount": "284218384205775",
+                    "maxAmount": "947394614019250000"
+                },
+                {
+                    "chainId": 137,
+                    "isEnabled": true,
+                    "minAmount": "17818969830950120",
+                    "maxAmount": "1425517586476009600"
+                },
+                {
+                    "chainId": 324,
+                    "isEnabled": true,
+                    "minAmount": "420915523752360000",
+                    "maxAmount": "1683662095009440000"
+                },
+                {
+                    "chainId": 1101,
+                    "isEnabled": true,
+                    "minAmount": "181874355574111200",
+                    "maxAmount": "1091246133444667200"
+                },
+                {
+                    "chainId": 42161,
+                    "isEnabled": true,
+                    "minAmount": "378664157925144000",
+                    "maxAmount": "1514656631700576000"
+                },
+                {
+                    "chainId": 1313161554,
+                    "isEnabled": true,
+                    "minAmount": "6239728404000000",
+                    "maxAmount": "623972840400000000"
+                }
+            ]
+        },
+        {
+            "name": "Aurora",
+            "chainId": 1313161554,
+            "icon": "https://movricons.s3.ap-south-1.amazonaws.com/aurora.svg",
+            "nativeAssetIcon": "https://maticnetwork.github.io/polygon-token-assets/assets/eth.svg",
+            "isSendingEnabled": true,
+            "isReceivingEnabled": true,
+            "blockExplorer": "https://aurorascan.dev",
+            "nativeAsset": "ETH",
+            "gasLimit": "140000",
+            "perUserGasAmount": {
+                "type": "BigNumber",
+                "hex": "0x011170"
+            },
+            "minFeeMultiplier": 5,
+            "maxFeeMultiplier": 500,
+            "maxAmountCap": {
+                "type": "BigNumber",
+                "hex": "0x6379da05b60000"
+            },
+            "gasMultiplier": 2,
+            "serviceTime": {
+                "from": 300000,
+                "to": 300000
+            },
+            "limits": [
+                {
+                    "chainId": 10,
+                    "isEnabled": true,
+                    "minAmount": "3420609464997376",
+                    "maxAmount": "28000000000000000"
+                },
+                {
+                    "chainId": 56,
+                    "isEnabled": true,
+                    "minAmount": "437996151260640",
+                    "maxAmount": "3503969210085120"
+                },
+                {
+                    "chainId": 100,
+                    "isEnabled": true,
+                    "minAmount": "2231940226470",
+                    "maxAmount": "7439800754900000"
+                },
+                {
+                    "chainId": 137,
+                    "isEnabled": true,
+                    "minAmount": "139930693309100",
+                    "maxAmount": "11194455464728000"
+                },
+                {
+                    "chainId": 324,
+                    "isEnabled": true,
+                    "minAmount": "3305410000000000",
+                    "maxAmount": "13221640000000000"
+                },
+                {
+                    "chainId": 1101,
+                    "isEnabled": true,
+                    "minAmount": "1428242200000000",
+                    "maxAmount": "8569453200000000"
+                },
+                {
+                    "chainId": 42161,
+                    "isEnabled": true,
+                    "minAmount": "2973614000000000",
+                    "maxAmount": "11894456000000000"
+                },
+                {
+                    "chainId": 43114,
+                    "isEnabled": true,
+                    "minAmount": "360955992299400",
+                    "maxAmount": "9023899807485000"
+                }
+            ]
+        }
+    ]
+}
