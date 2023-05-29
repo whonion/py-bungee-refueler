@@ -177,9 +177,3 @@ max_ftm_to_opt = 140.81
 max_ftm_to_bsc = 17.8
 max_ftm_to_matic = 48.31
 max_ftm_to_avax = 45.93
-
-
-
-
-
-
