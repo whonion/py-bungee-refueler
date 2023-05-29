@@ -7,120 +7,208 @@ logger.add(stderr, format="<white>{time:HH:mm:ss}</white>"
 
 def minGasAmount(parent_chain, destination_chain) -> float:
      # From Ethereum
-     if (parent_chain == 'ETH') and (destination_chain == 'ARB'):
-          return min_eth_to_arb 
-     
      if (parent_chain == 'ETH') and (destination_chain == 'OPT'):
           return min_eth_to_opt 
         
      if (parent_chain == 'ETH') and (destination_chain == 'BSC'):
           return min_eth_to_bsc 
-     
+
+     if (parent_chain == 'ETH') and (destination_chain == 'GNO'):
+          return min_eth_to_gno
+
      if (parent_chain == 'ETH') and (destination_chain == 'MATIC'):
           return min_eth_to_matic
-      
-     # if (parent_chain == 'ETH') and (destination_chain == 'FTM'):
-     #      return min_eth_to_ftm 
-     
+
+     if (parent_chain == 'ETH') and (destination_chain == 'ERA'):
+          return min_eth_to_era
+
+     if (parent_chain == 'ETH') and (destination_chain == 'ZKEVM'):
+          return min_eth_to_zkevm
+            
+     if (parent_chain == 'ETH') and (destination_chain == 'ARB'):
+          return min_eth_to_arb 
+          
      if (parent_chain == 'ETH') and (destination_chain == 'AVAX'):
-          return min_eth_to_avax 
-     
-     # From Arbitrum    
-     if (parent_chain == 'ARB') and (destination_chain == 'OPT'):
-          return min_arb_to_opt 
-          
-     if (parent_chain == 'ARB') and (destination_chain == 'BSC'):
-          return min_arb_to_bsc 
-          
-     if (parent_chain == 'ARB') and (destination_chain == 'MATIC'):
-          return min_arb_to_matic
+          return min_eth_to_avax
       
-     # if (parent_chain == 'ARB') and (destination_chain == 'FTM'):
-     #      return min_arb_to_ftm
-     
-     if (parent_chain == 'ARB') and (destination_chain == 'AVAX'):
-          return min_arb_to_avax
-     
-     # From Optimism    
+     if (parent_chain == 'ETH') and (destination_chain == 'AUR'):
+          return min_eth_to_aur
+         
+     # From Optimism        
+     if (parent_chain == 'OPT') and (destination_chain == 'BSC'):
+          return min_opt_to_bsc 
+
+     if (parent_chain == 'OPT') and (destination_chain == 'GNO'):
+          return min_opt_to_gno
+
+     if (parent_chain == 'OPT') and (destination_chain == 'MATIC'):
+          return min_opt_to_matic
+
+     if (parent_chain == 'OPT') and (destination_chain == 'ERA'):
+          return min_opt_to_era
+
+     if (parent_chain == 'OPT') and (destination_chain == 'ZKEVM'):
+          return min_opt_to_zkevm
+            
      if (parent_chain == 'OPT') and (destination_chain == 'ARB'):
           return min_opt_to_arb 
           
-     if (parent_chain == 'OPT') and (destination_chain == 'BSC'):
-          return min_opt_to_bsc 
-          
-     if (parent_chain == 'OPT') and (destination_chain == 'MATIC'):
-          return min_opt_to_matic
-      
-     # if (parent_chain == 'OPT') and (destination_chain == 'FTM'):
-     #      return min_opt_to_ftm
-      
      if (parent_chain == 'OPT') and (destination_chain == 'AVAX'):
-          return min_opt_to_avax 
-     
-     # From BNB Chain    
+          return min_opt_to_avax
+      
+     if (parent_chain == 'OPT') and (destination_chain == 'AUR'):
+          return min_opt_to_aur
+
+     # From BNB Chain       
+     if (parent_chain == 'BSC') and (destination_chain == 'OPT'):
+          return min_bsc_to_opt 
+
+     if (parent_chain == 'BSC') and (destination_chain == 'GNO'):
+          return min_bsc_to_gno
+
+     if (parent_chain == 'BSC') and (destination_chain == 'MATIC'):
+          return min_bsc_to_matic
+
+     if (parent_chain == 'BSC') and (destination_chain == 'ERA'):
+          return min_bsc_to_era
+
+     if (parent_chain == 'BSC') and (destination_chain == 'ZKEVM'):
+          return min_bsc_to_zkevm
+            
      if (parent_chain == 'BSC') and (destination_chain == 'ARB'):
           return min_bsc_to_arb 
           
-     if (parent_chain == 'BSC') and (destination_chain == 'OPT'):
-          return min_bsc_to_opt 
-          
-     if (parent_chain == 'BSC') and (destination_chain == 'MATIC'):
-          return min_bsc_to_matic
-      
-     # if (parent_chain == 'BSC') and (destination_chain == 'FTM'):
-     #      return min_bsc_to_ftm
-      
      if (parent_chain == 'BSC') and (destination_chain == 'AVAX'):
-          return min_bsc_to_avax 
-     
+          return min_bsc_to_avax
+      
+     if (parent_chain == 'BSC') and (destination_chain == 'AUR'):
+          return min_bsc_to_aur
+
+     # From Gnosis 
+     if (parent_chain == 'GNO') and (destination_chain == 'OPT'):
+          return min_gno_to_opt 
+
+     if (parent_chain == 'GNO') and (destination_chain == 'BSC'):
+          return min_gno_to_bsc
+
+     if (parent_chain == 'GNO') and (destination_chain == 'MATIC'):
+          return min_gno_to_matic
+
+     if (parent_chain == 'GNO') and (destination_chain == 'ERA'):
+          return min_gno_to_era
+
+     if (parent_chain == 'GNO') and (destination_chain == 'ZKEVM'):
+          return min_gno_to_zkevm
+            
+     if (parent_chain == 'GNO') and (destination_chain == 'ARB'):
+          return min_gno_to_arb 
+          
+     if (parent_chain == 'GNO') and (destination_chain == 'AVAX'):
+          return min_gno_to_avax
+      
+     if (parent_chain == 'GNO') and (destination_chain == 'AUR'):
+          return min_gno_to_aur
+
      # From Polygon 
+     if (parent_chain == 'MATIC') and (destination_chain == 'OPT'):
+          return min_matic_to_opt 
+
+     if (parent_chain == 'MATIC') and (destination_chain == 'GNO'):
+          return min_matic_to_gno
+
+     if (parent_chain == 'MATIC') and (destination_chain == 'BSC'):
+          return min_matic_to_bsc
+
+     if (parent_chain == 'MATIC') and (destination_chain == 'ERA'):
+          return min_matic_to_era
+
+     if (parent_chain == 'MATIC') and (destination_chain == 'ZKEVM'):
+          return min_matic_to_zkevm
+            
      if (parent_chain == 'MATIC') and (destination_chain == 'ARB'):
           return min_matic_to_arb 
           
-     if (parent_chain == 'MATIC') and (destination_chain == 'OPT'):
-          return min_matic_to_opt 
-          
-     if (parent_chain == 'MATIC') and (destination_chain == 'BSC'):
-          return min_matic_to_bsc 
-     
-     # if (parent_chain == 'MATIC') and (destination_chain == 'FTM'):
-     #      return min_matic_to_ftm
-      
      if (parent_chain == 'MATIC') and (destination_chain == 'AVAX'):
-          return min_matic_avax
+          return min_matic_to_avax
+      
+     if (parent_chain == 'MATIC') and (destination_chain == 'AUR'):
+          return min_matic_to_aur
+
+      # From Arbitrum
+     if (parent_chain == 'ARB') and (destination_chain == 'OPT'):
+          return min_arb_to_opt 
+
+     if (parent_chain == 'ARB') and (destination_chain == 'BSC'):
+          return min_arb_to_bsc
+
+     if (parent_chain == 'ARB') and (destination_chain == 'GNO'):
+          return min_arb_to_gno
+
+     if (parent_chain == 'ARB') and (destination_chain == 'MATIC'):
+          return min_arb_to_matic
+
+     if (parent_chain == 'ARB') and (destination_chain == 'ERA'):
+          return min_arb_to_era
+
+     if (parent_chain == 'ARB') and (destination_chain == 'ZKEVM'):
+          return min_arb_to_zkevm
+            
+     if (parent_chain == 'ARB') and (destination_chain == 'AVAX'):
+          return min_arb_to_avax 
+               
+     if (parent_chain == 'ARB') and (destination_chain == 'AUR'):
+          return min_arb_to_aur     
      
-     # From Fantom
-     # if (parent_chain == 'FTM') and (destination_chain == 'ARB'):
-     #      return min_ftm_to_arb
-               
-     # if (parent_chain == 'FTM') and (destination_chain == 'OPT'):
-     #      return min_ftm_to_opt
-               
-     # if (parent_chain == 'FTM') and (destination_chain == 'BSC'):
-     #      return min_ftm_to_bsc
-          
-     # if (parent_chain == 'FTM') and (destination_chain == 'MATIC'):
-     #      return min_ftm_to_matic
-
-     if (parent_chain == 'FTM') and (destination_chain == 'AVAX'):
-          return min_ftm_to_avax
-
-     # From AVAX
-     if (parent_chain == 'AVAX') and (destination_chain == 'ARB'):
-          return min_avax_to_arb
-               
+     # From AVAX 
      if (parent_chain == 'AVAX') and (destination_chain == 'OPT'):
-          return min_avax_to_opt
-               
+          return min_avax_to_opt 
+
      if (parent_chain == 'AVAX') and (destination_chain == 'BSC'):
           return min_avax_to_bsc
-          
+
+     if (parent_chain == 'AVAX') and (destination_chain == 'GNO'):
+          return min_avax_to_gno
+
      if (parent_chain == 'AVAX') and (destination_chain == 'MATIC'):
           return min_avax_to_matic
 
-     # if (parent_chain == 'AVAX') and (destination_chain == 'FTM'):
-     #      return min_avax_to_ftm
-    
+     if (parent_chain == 'AVAX') and (destination_chain == 'ERA'):
+          return min_avax_to_era
+
+     if (parent_chain == 'AVAX') and (destination_chain == 'ZKEVM'):
+          return min_avax_to_zkevm
+            
+     if (parent_chain == 'AVAX') and (destination_chain == 'ARB'):
+          return min_avax_to_arb 
+               
+     if (parent_chain == 'AVAX') and (destination_chain == 'AUR'):
+          return min_avax_to_aur
+
+      # From Aurora
+     if (parent_chain == 'AUR') and (destination_chain == 'OPT'):
+          return min_aur_to_opt 
+
+     if (parent_chain == 'AUR') and (destination_chain == 'BSC'):
+          return min_aur_to_bsc
+
+     if (parent_chain == 'AUR') and (destination_chain == 'GNO'):
+          return min_aur_to_gno
+
+     if (parent_chain == 'AUR') and (destination_chain == 'MATIC'):
+          return min_aur_to_matic
+
+     if (parent_chain == 'AUR') and (destination_chain == 'ERA'):
+          return min_aur_to_era
+
+     if (parent_chain == 'AUR') and (destination_chain == 'ZKEVM'):
+          return min_aur_to_zkevm
+            
+     if (parent_chain == 'AUR') and (destination_chain == 'AVAX'):
+          return min_aur_to_arb
+      
+     if (parent_chain == 'AUR') and (destination_chain == 'AVAX'):
+          return min_aur_to_avax 
+               
 def calculateGasPrice(private_key,tx:dict):
         w3 = Web3(Web3.HTTPProvider(rpc))
         w3.middleware_onion.inject(geth_poa_middleware, layer=0)
