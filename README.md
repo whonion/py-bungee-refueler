@@ -12,9 +12,12 @@ Batch send gas-token  with Socket<br>
 ## Package description
 
 - `main.py` - main module for execute;
+- `main_ru.py` - main module for execute(russian localization);
+- `refuel.py` - module for getting actual EVM chain data (minAmount/maxAmount, network availability);
+- `chains.json` - formatted json file obtained from `https://refuel.socket.tech/chains` (updated every time the script is run);
 - `config.py` - module containing the required imports, settings of minimum amounts to send, url-addresses of block explorers;
-- `ABI/socket.json` - ABI of Socket GasMovr contract;
-- `main_ru.py` - main module for execute(russian localization).
+- `ABI/socket.json` - ABI of Socket GasMovr contract.
+
 
 ## Description of required files
 
@@ -39,19 +42,18 @@ BUNGEE_AVAX_ROUNER = '0x040993fbF458b95871Cd2D73Ee2E09F4AF6d56bB'
 BUNGEE_AUR_ROUNER = '0x2b42AFFD4b7C14d9B7C2579229495c052672Ccd3'
 BUNGEE_FTM_ROUNER = '0x040993fbF458b95871Cd2D73Ee2E09F4AF6d56bB'
 
-#Specify your `API_KEY`` if you use Anr or change RPC's constants and specify your own private RPCs
-API_KEY = 'API_KEY' 
-
+#Specify your `API_KEY` if you use Anr or change RPC's constants and specify your own private RPCs
 # Don't recommended to use a public node if you've many wallets else you'll get '429 Client Error: Too Many Requests for url'
-RPC_ETH = f"https://rpc.ankr.com/eth/"+API_KEY
-RPC_ARB = f'https://rpc.ankr.com/arbitrum/'+API_KEY
-RPC_OPT = f'https://rpc.ankr.com/optimism/'+API_KEY
-RPC_BSC = f'https://rpc.ankr.com/bsc/'+API_KEY
-RPC_MATIC =  f'https://rpc.ankr.com/polygon/'+API_KEY
-RPC_FTM =  f'https://rpc.ankr.com/fantom/'+API_KEY
-RPC_AVAX = f'https://rpc.ankr.com/avalanche/'+API_KEY
-RPC_GNO = f'https://rpc.ankr.com/gnosis/'+API_KEY
-RPC_AUR = f'https://endpoints.omniatech.io/v1/aurora/mainnet/public'
+
+RPC_ETH = 'https://rpc.ankr.com/eth/API_KEY'
+RPC_ARB = 'https://rpc.ankr.com/arbitrum/API_KEY'
+RPC_OPT = 'https://rpc.ankr.com/optimism/API_KEY'
+RPC_BSC = 'https://rpc.ankr.com/bsc/API_KEY'
+RPC_MATIC =  'https://rpc.ankr.com/polygon/API_KEY'
+RPC_FTM =  'https://rpc.ankr.com/fantom/API_KEY'
+RPC_AVAX = 'https://rpc.ankr.com/avalanche/API_KEY'
+RPC_GNO = 'https://rpc.ankr.com/gnosis/API_KEY'
+RPC_AUR = 'https://endpoints.omniatech.io/v1/aurora/mainnet/public'
 ```
 
 ## How run
@@ -66,7 +68,7 @@ pip install -r requierements.txt
 
 - Add your private keys to the `accounts.txt` file;
 - Add your RPCs to the `.env' file;
-- Add recipient addresses to `recipient_addresses.txt` for receive in the target network's native token on another address;<br/>
+- ~~Add recipient addresses to `recipient_addresses.txt` for receive in the target network's native token on another address;<br/>~~
 - Run `main.py` and follow the script prompts.
 
 _for Windows_
