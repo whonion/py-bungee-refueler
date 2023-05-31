@@ -26,50 +26,56 @@
                 {
                     "chainId": 10,
                     "isEnabled": true,
-                    "minAmount": "3420609464997376",
+                    "minAmount": "4345157948419584",
                     "maxAmount": "28000000000000000"
                 },
                 {
                     "chainId": 56,
                     "isEnabled": true,
-                    "minAmount": "437996151260640",
-                    "maxAmount": "3503969210085120"
+                    "minAmount": "429800453293535",
+                    "maxAmount": "3438403626348280"
                 },
                 {
                     "chainId": 100,
                     "isEnabled": true,
-                    "minAmount": "2231940226470",
-                    "maxAmount": "7439800754900000"
+                    "minAmount": "2109688539990",
+                    "maxAmount": "7032295133300000"
                 },
                 {
                     "chainId": 137,
                     "isEnabled": true,
-                    "minAmount": "139930693309100",
-                    "maxAmount": "11194455464728000"
+                    "minAmount": "136748065220950",
+                    "maxAmount": "10939845217676000"
+                },
+                {
+                    "chainId": 250,
+                    "isEnabled": true,
+                    "minAmount": "45323143959960",
+                    "maxAmount": "3021542930664000"
                 },
                 {
                     "chainId": 324,
                     "isEnabled": true,
-                    "minAmount": "3305410000000000",
-                    "maxAmount": "13221640000000000"
+                    "minAmount": "3988660000000000",
+                    "maxAmount": "15954640000000000"
                 },
                 {
                     "chainId": 1101,
                     "isEnabled": true,
-                    "minAmount": "1428242200000000",
-                    "maxAmount": "8569453200000000"
+                    "minAmount": "1817762800000000",
+                    "maxAmount": "10906576800000000"
                 },
                 {
                     "chainId": 42161,
                     "isEnabled": true,
-                    "minAmount": "2973614000000000",
-                    "maxAmount": "11894456000000000"
+                    "minAmount": "3862904000000000",
+                    "maxAmount": "15451616000000000"
                 },
                 {
                     "chainId": 43114,
                     "isEnabled": true,
-                    "minAmount": "360955992299400",
-                    "maxAmount": "9023899807485000"
+                    "minAmount": "342657497213170",
+                    "maxAmount": "8566437430329250"
                 },
                 {
                     "chainId": 1313161554,
@@ -108,44 +114,50 @@
                 {
                     "chainId": 56,
                     "isEnabled": true,
-                    "minAmount": "437996151260640",
-                    "maxAmount": "3503969210085120"
+                    "minAmount": "429800453293535",
+                    "maxAmount": "3438403626348280"
                 },
                 {
                     "chainId": 100,
                     "isEnabled": true,
-                    "minAmount": "2231940226470",
-                    "maxAmount": "7439800754900000"
+                    "minAmount": "2109688539990",
+                    "maxAmount": "7032295133300000"
                 },
                 {
                     "chainId": 137,
                     "isEnabled": true,
-                    "minAmount": "139930693309100",
-                    "maxAmount": "11194455464728000"
+                    "minAmount": "136748065220950",
+                    "maxAmount": "10939845217676000"
+                },
+                {
+                    "chainId": 250,
+                    "isEnabled": true,
+                    "minAmount": "45323143959960",
+                    "maxAmount": "3021542930664000"
                 },
                 {
                     "chainId": 324,
                     "isEnabled": true,
-                    "minAmount": "3305410000000000",
-                    "maxAmount": "13221640000000000"
+                    "minAmount": "3988660000000000",
+                    "maxAmount": "15954640000000000"
                 },
                 {
                     "chainId": 1101,
                     "isEnabled": true,
-                    "minAmount": "1428242200000000",
-                    "maxAmount": "8569453200000000"
+                    "minAmount": "1817762800000000",
+                    "maxAmount": "10906576800000000"
                 },
                 {
                     "chainId": 42161,
                     "isEnabled": true,
-                    "minAmount": "2973614000000000",
-                    "maxAmount": "11894456000000000"
+                    "minAmount": "3862904000000000",
+                    "maxAmount": "15451616000000000"
                 },
                 {
                     "chainId": 43114,
                     "isEnabled": true,
-                    "minAmount": "360955992299400",
-                    "maxAmount": "9023899807485000"
+                    "minAmount": "342657497213170",
+                    "maxAmount": "8566437430329250"
                 },
                 {
                     "chainId": 1313161554,
@@ -180,50 +192,56 @@
                 {
                     "chainId": 10,
                     "isEnabled": true,
-                    "minAmount": "20450738542900216",
-                    "maxAmount": "167403114872000000"
+                    "minAmount": "26473691038666920",
+                    "maxAmount": "170595259800000000"
                 },
                 {
                     "chainId": 100,
                     "isEnabled": true,
-                    "minAmount": "13344062361330",
-                    "maxAmount": "44480207871100000"
+                    "minAmount": "12853673736615",
+                    "maxAmount": "42845579122050000"
                 },
                 {
                     "chainId": 137,
                     "isEnabled": true,
-                    "minAmount": "836601211592980",
-                    "maxAmount": "66928096927438400"
+                    "minAmount": "833163275339990",
+                    "maxAmount": "66653062027199200"
+                },
+                {
+                    "chainId": 250,
+                    "isEnabled": true,
+                    "minAmount": "276139768569780",
+                    "maxAmount": "18409317904652000"
                 },
                 {
                     "chainId": 324,
                     "isEnabled": true,
-                    "minAmount": "19761997497466340",
-                    "maxAmount": "79047989989865360"
+                    "minAmount": "24301660319781000",
+                    "maxAmount": "97206641279124000"
                 },
                 {
                     "chainId": 1101,
                     "isEnabled": true,
-                    "minAmount": "8539006895415640",
-                    "maxAmount": "51234041372493840"
+                    "minAmount": "11075061325741980",
+                    "maxAmount": "66450367954451880"
                 },
                 {
                     "chainId": 42161,
                     "isEnabled": true,
-                    "minAmount": "17778294500963830",
-                    "maxAmount": "71113178003855320"
+                    "minAmount": "23535468266516400",
+                    "maxAmount": "94141873066065600"
                 },
                 {
                     "chainId": 43114,
                     "isEnabled": true,
-                    "minAmount": "2158041337197370",
-                    "maxAmount": "53951033429934250"
+                    "minAmount": "2087705169832560",
+                    "maxAmount": "52192629245814000"
                 },
                 {
                     "chainId": 1313161554,
                     "isEnabled": true,
-                    "minAmount": "292955451026000",
-                    "maxAmount": "29295545102600000"
+                    "minAmount": "298541704650000",
+                    "maxAmount": "29854170465000000"
                 }
             ]
         },
@@ -252,50 +270,56 @@
                 {
                     "chainId": 10,
                     "isEnabled": true,
-                    "minAmount": "6302917618488114936",
-                    "maxAmount": "51593640000000000000"
+                    "minAmount": "8131658939410862080",
+                    "maxAmount": "52400040000000000000"
                 },
                 {
                     "chainId": 56,
                     "isEnabled": true,
-                    "minAmount": "807064848000000000",
-                    "maxAmount": "6456518784000000000"
+                    "minAmount": "804341462400000000",
+                    "maxAmount": "6434731699200000000"
                 },
                 {
                     "chainId": 137,
                     "isEnabled": true,
-                    "minAmount": "257840493435836290",
-                    "maxAmount": "20627239474866903200"
+                    "minAmount": "255914431689206260",
+                    "maxAmount": "20473154535136500800"
+                },
+                {
+                    "chainId": 250,
+                    "isEnabled": true,
+                    "minAmount": "84819091277618685",
+                    "maxAmount": "5654606085174579000"
                 },
                 {
                     "chainId": 324,
                     "isEnabled": true,
-                    "minAmount": "6090647628300000000",
-                    "maxAmount": "24362590513200000000"
+                    "minAmount": "7464497983800000000",
+                    "maxAmount": "29857991935200000000"
                 },
                 {
                     "chainId": 1101,
                     "isEnabled": true,
-                    "minAmount": "2631721924986000000",
-                    "maxAmount": "15790331549916000000"
+                    "minAmount": "3401815836804000000",
+                    "maxAmount": "20410895020824000000"
                 },
                 {
                     "chainId": 42161,
                     "isEnabled": true,
-                    "minAmount": "5479270364820000000",
-                    "maxAmount": "21917081459280000000"
+                    "minAmount": "7229154432720000000",
+                    "maxAmount": "28916617730880000000"
                 },
                 {
                     "chainId": 43114,
                     "isEnabled": true,
-                    "minAmount": "665108340074129230",
-                    "maxAmount": "16627708501853230750"
+                    "minAmount": "641259520000000000",
+                    "maxAmount": "16031488000000000000"
                 },
                 {
                     "chainId": 1313161554,
                     "isEnabled": true,
-                    "minAmount": "90288870000000000",
-                    "maxAmount": "9028887000000000000"
+                    "minAmount": "91700070000000000",
+                    "maxAmount": "9170007000000000000"
                 }
             ]
         },
@@ -324,50 +348,134 @@
                 {
                     "chainId": 10,
                     "isEnabled": true,
-                    "minAmount": "6837011265656734440",
-                    "maxAmount": "55965557424000000000"
+                    "minAmount": "9164146689488742688",
+                    "maxAmount": "59053344056000000000"
                 },
                 {
                     "chainId": 56,
                     "isEnabled": true,
-                    "minAmount": "875453526506520000",
-                    "maxAmount": "7003628212052160000"
+                    "minAmount": "906469787497032000",
+                    "maxAmount": "7251758299976256000"
                 },
                 {
                     "chainId": 100,
                     "isEnabled": true,
-                    "minAmount": "4461134959747260",
-                    "maxAmount": "14870449865824200000"
+                    "minAmount": "4449434402299065",
+                    "maxAmount": "14831448007663550000"
+                },
+                {
+                    "chainId": 250,
+                    "isEnabled": true,
+                    "minAmount": "95588686205955600",
+                    "maxAmount": "6372579080397040000"
                 },
                 {
                     "chainId": 324,
                     "isEnabled": true,
-                    "minAmount": "6606754041602280000",
-                    "maxAmount": "26427016166409120000"
+                    "minAmount": "8412275403657320000",
+                    "maxAmount": "33649101614629280000"
                 },
                 {
                     "chainId": 1101,
                     "isEnabled": true,
-                    "minAmount": "2854727530695717600",
-                    "maxAmount": "17128365184174305600"
+                    "minAmount": "3833749001449925600",
+                    "maxAmount": "23002494008699553600"
                 },
                 {
                     "chainId": 42161,
                     "isEnabled": true,
-                    "minAmount": "5943570181207512000",
-                    "maxAmount": "23774280724830048000"
+                    "minAmount": "8147049963117808000",
+                    "maxAmount": "32588199852471232000"
                 },
                 {
                     "chainId": 43114,
                     "isEnabled": true,
-                    "minAmount": "721467975277900740",
-                    "maxAmount": "18036699381947518500"
+                    "minAmount": "722681109778480000",
+                    "maxAmount": "18067027744462000000"
                 },
                 {
                     "chainId": 1313161554,
                     "isEnabled": true,
-                    "minAmount": "97939725492000000",
-                    "maxAmount": "9793972549200000000"
+                    "minAmount": "103343352098000000",
+                    "maxAmount": "10334335209800000000"
+                }
+            ]
+        },
+        {
+            "name": "Fantom",
+            "chainId": 250,
+            "icon": "https://maticnetwork.github.io/polygon-token-assets/assets/ftm.svg",
+            "nativeAssetIcon": "https://maticnetwork.github.io/polygon-token-assets/assets/ftm.svg",
+            "isSendingEnabled": true,
+            "isReceivingEnabled": true,
+            "blockExplorer": "https://ftmscan.com",
+            "nativeAsset": "FTM",
+            "gasLimit": "29000",
+            "minFeeMultiplier": 15,
+            "maxFeeMultiplier": 1000,
+            "maxAmountCap": {
+                "type": "BigNumber",
+                "hex": "0x04e1003b28d9280000"
+            },
+            "gasMultiplier": 2,
+            "serviceTime": {
+                "from": 300000,
+                "to": 300000
+            },
+            "limits": [
+                {
+                    "chainId": 10,
+                    "isEnabled": true,
+                    "minAmount": "25953870068834002736",
+                    "maxAmount": "167245557136000000000"
+                },
+                {
+                    "chainId": 56,
+                    "isEnabled": true,
+                    "minAmount": "2567222010087984000",
+                    "maxAmount": "20537776080703872000"
+                },
+                {
+                    "chainId": 100,
+                    "isEnabled": true,
+                    "minAmount": "12601286973346350",
+                    "maxAmount": "42004289911154500000"
+                },
+                {
+                    "chainId": 137,
+                    "isEnabled": true,
+                    "minAmount": "816803798480048630",
+                    "maxAmount": "65344303878403890400"
+                },
+                {
+                    "chainId": 324,
+                    "isEnabled": true,
+                    "minAmount": "23824487997359920000",
+                    "maxAmount": "95297951989439680000"
+                },
+                {
+                    "chainId": 1101,
+                    "isEnabled": true,
+                    "minAmount": "10857598293824833600",
+                    "maxAmount": "65145589762949001600"
+                },
+                {
+                    "chainId": 42161,
+                    "isEnabled": true,
+                    "minAmount": "23073340415817248000",
+                    "maxAmount": "92293361663268992000"
+                },
+                {
+                    "chainId": 43114,
+                    "isEnabled": true,
+                    "minAmount": "2046712287021040000",
+                    "maxAmount": "51167807175526000000"
+                },
+                {
+                    "chainId": 1313161554,
+                    "isEnabled": true,
+                    "minAmount": "292679724988000000",
+                    "maxAmount": "29267972498800000000"
                 }
             ]
         },
@@ -396,44 +504,50 @@
                 {
                     "chainId": 10,
                     "isEnabled": true,
-                    "minAmount": "3420609464997376",
+                    "minAmount": "4345157948419584",
                     "maxAmount": "28000000000000000"
                 },
                 {
                     "chainId": 56,
                     "isEnabled": true,
-                    "minAmount": "437996151260640",
-                    "maxAmount": "3503969210085120"
+                    "minAmount": "429800453293535",
+                    "maxAmount": "3438403626348280"
                 },
                 {
                     "chainId": 100,
                     "isEnabled": true,
-                    "minAmount": "2231940226470",
-                    "maxAmount": "7439800754900000"
+                    "minAmount": "2109688539990",
+                    "maxAmount": "7032295133300000"
                 },
                 {
                     "chainId": 137,
                     "isEnabled": true,
-                    "minAmount": "139930693309100",
-                    "maxAmount": "11194455464728000"
+                    "minAmount": "136748065220950",
+                    "maxAmount": "10939845217676000"
+                },
+                {
+                    "chainId": 250,
+                    "isEnabled": true,
+                    "minAmount": "45323143959960",
+                    "maxAmount": "3021542930664000"
                 },
                 {
                     "chainId": 1101,
                     "isEnabled": true,
-                    "minAmount": "1428242200000000",
-                    "maxAmount": "8569453200000000"
+                    "minAmount": "1817762800000000",
+                    "maxAmount": "10906576800000000"
                 },
                 {
                     "chainId": 42161,
                     "isEnabled": true,
-                    "minAmount": "2973614000000000",
-                    "maxAmount": "11894456000000000"
+                    "minAmount": "3862904000000000",
+                    "maxAmount": "15451616000000000"
                 },
                 {
                     "chainId": 43114,
                     "isEnabled": true,
-                    "minAmount": "360955992299400",
-                    "maxAmount": "9023899807485000"
+                    "minAmount": "342657497213170",
+                    "maxAmount": "8566437430329250"
                 },
                 {
                     "chainId": 1313161554,
@@ -468,44 +582,50 @@
                 {
                     "chainId": 10,
                     "isEnabled": true,
-                    "minAmount": "3420609464997376",
+                    "minAmount": "4345157948419584",
                     "maxAmount": "28000000000000000"
                 },
                 {
                     "chainId": 56,
                     "isEnabled": true,
-                    "minAmount": "437996151260640",
-                    "maxAmount": "3503969210085120"
+                    "minAmount": "429800453293535",
+                    "maxAmount": "3438403626348280"
                 },
                 {
                     "chainId": 100,
                     "isEnabled": true,
-                    "minAmount": "2231940226470",
-                    "maxAmount": "7439800754900000"
+                    "minAmount": "2109688539990",
+                    "maxAmount": "7032295133300000"
                 },
                 {
                     "chainId": 137,
                     "isEnabled": true,
-                    "minAmount": "139930693309100",
-                    "maxAmount": "11194455464728000"
+                    "minAmount": "136748065220950",
+                    "maxAmount": "10939845217676000"
+                },
+                {
+                    "chainId": 250,
+                    "isEnabled": true,
+                    "minAmount": "45323143959960",
+                    "maxAmount": "3021542930664000"
                 },
                 {
                     "chainId": 324,
                     "isEnabled": true,
-                    "minAmount": "3305410000000000",
-                    "maxAmount": "13221640000000000"
+                    "minAmount": "3988660000000000",
+                    "maxAmount": "15954640000000000"
                 },
                 {
                     "chainId": 42161,
                     "isEnabled": true,
-                    "minAmount": "2973614000000000",
-                    "maxAmount": "11894456000000000"
+                    "minAmount": "3862904000000000",
+                    "maxAmount": "15451616000000000"
                 },
                 {
                     "chainId": 43114,
                     "isEnabled": true,
-                    "minAmount": "360955992299400",
-                    "maxAmount": "9023899807485000"
+                    "minAmount": "342657497213170",
+                    "maxAmount": "8566437430329250"
                 },
                 {
                     "chainId": 1313161554,
@@ -540,44 +660,50 @@
                 {
                     "chainId": 10,
                     "isEnabled": true,
-                    "minAmount": "3420609464997376",
+                    "minAmount": "4345157948419584",
                     "maxAmount": "28000000000000000"
                 },
                 {
                     "chainId": 56,
                     "isEnabled": true,
-                    "minAmount": "437996151260640",
-                    "maxAmount": "3503969210085120"
+                    "minAmount": "429800453293535",
+                    "maxAmount": "3438403626348280"
                 },
                 {
                     "chainId": 100,
                     "isEnabled": true,
-                    "minAmount": "2231940226470",
-                    "maxAmount": "7439800754900000"
+                    "minAmount": "2109688539990",
+                    "maxAmount": "7032295133300000"
                 },
                 {
                     "chainId": 137,
                     "isEnabled": true,
-                    "minAmount": "139930693309100",
-                    "maxAmount": "11194455464728000"
+                    "minAmount": "136748065220950",
+                    "maxAmount": "10939845217676000"
+                },
+                {
+                    "chainId": 250,
+                    "isEnabled": true,
+                    "minAmount": "45323143959960",
+                    "maxAmount": "3021542930664000"
                 },
                 {
                     "chainId": 324,
                     "isEnabled": true,
-                    "minAmount": "3305410000000000",
-                    "maxAmount": "13221640000000000"
+                    "minAmount": "3988660000000000",
+                    "maxAmount": "15954640000000000"
                 },
                 {
                     "chainId": 1101,
                     "isEnabled": true,
-                    "minAmount": "1428242200000000",
-                    "maxAmount": "8569453200000000"
+                    "minAmount": "1817762800000000",
+                    "maxAmount": "10906576800000000"
                 },
                 {
                     "chainId": 43114,
                     "isEnabled": true,
-                    "minAmount": "360955992299400",
-                    "maxAmount": "9023899807485000"
+                    "minAmount": "342657497213170",
+                    "maxAmount": "8566437430329250"
                 },
                 {
                     "chainId": 1313161554,
@@ -612,50 +738,56 @@
                 {
                     "chainId": 10,
                     "isEnabled": true,
-                    "minAmount": "435585184443578992",
-                    "maxAmount": "3565559088000000000"
+                    "minAmount": "577532595128612360",
+                    "maxAmount": "3721593750000000000"
                 },
                 {
                     "chainId": 56,
                     "isEnabled": true,
-                    "minAmount": "55775041336058400",
-                    "maxAmount": "446200330688467200"
+                    "minAmount": "57126524320562400",
+                    "maxAmount": "457012194564499200"
                 },
                 {
                     "chainId": 100,
                     "isEnabled": true,
-                    "minAmount": "284218384205775",
-                    "maxAmount": "947394614019250000"
+                    "minAmount": "280407274469040",
+                    "maxAmount": "934690914896800000"
                 },
                 {
                     "chainId": 137,
                     "isEnabled": true,
-                    "minAmount": "17818969830950120",
-                    "maxAmount": "1425517586476009600"
+                    "minAmount": "18175740886493110",
+                    "maxAmount": "1454059270919448800"
+                },
+                {
+                    "chainId": 250,
+                    "isEnabled": true,
+                    "minAmount": "6024083188069185",
+                    "maxAmount": "401605545871279000"
                 },
                 {
                     "chainId": 324,
                     "isEnabled": true,
-                    "minAmount": "420915523752360000",
-                    "maxAmount": "1683662095009440000"
+                    "minAmount": "530149004531250000",
+                    "maxAmount": "2120596018125000000"
                 },
                 {
                     "chainId": 1101,
                     "isEnabled": true,
-                    "minAmount": "181874355574111200",
-                    "maxAmount": "1091246133444667200"
+                    "minAmount": "241606238409375000",
+                    "maxAmount": "1449637430456250000"
                 },
                 {
                     "chainId": 42161,
                     "isEnabled": true,
-                    "minAmount": "378664157925144000",
-                    "maxAmount": "1514656631700576000"
+                    "minAmount": "513434263687500000",
+                    "maxAmount": "2053737054750000000"
                 },
                 {
                     "chainId": 1313161554,
                     "isEnabled": true,
-                    "minAmount": "6239728404000000",
-                    "maxAmount": "623972840400000000"
+                    "minAmount": "6512789062500000",
+                    "maxAmount": "651278906250000000"
                 }
             ]
         },
@@ -688,50 +820,56 @@
                 {
                     "chainId": 10,
                     "isEnabled": true,
-                    "minAmount": "3420609464997376",
+                    "minAmount": "4345157948419584",
                     "maxAmount": "28000000000000000"
                 },
                 {
                     "chainId": 56,
                     "isEnabled": true,
-                    "minAmount": "437996151260640",
-                    "maxAmount": "3503969210085120"
+                    "minAmount": "429800453293535",
+                    "maxAmount": "3438403626348280"
                 },
                 {
                     "chainId": 100,
                     "isEnabled": true,
-                    "minAmount": "2231940226470",
-                    "maxAmount": "7439800754900000"
+                    "minAmount": "2109688539990",
+                    "maxAmount": "7032295133300000"
                 },
                 {
                     "chainId": 137,
                     "isEnabled": true,
-                    "minAmount": "139930693309100",
-                    "maxAmount": "11194455464728000"
+                    "minAmount": "136748065220950",
+                    "maxAmount": "10939845217676000"
+                },
+                {
+                    "chainId": 250,
+                    "isEnabled": true,
+                    "minAmount": "45323143959960",
+                    "maxAmount": "3021542930664000"
                 },
                 {
                     "chainId": 324,
                     "isEnabled": true,
-                    "minAmount": "3305410000000000",
-                    "maxAmount": "13221640000000000"
+                    "minAmount": "3988660000000000",
+                    "maxAmount": "15954640000000000"
                 },
                 {
                     "chainId": 1101,
                     "isEnabled": true,
-                    "minAmount": "1428242200000000",
-                    "maxAmount": "8569453200000000"
+                    "minAmount": "1817762800000000",
+                    "maxAmount": "10906576800000000"
                 },
                 {
                     "chainId": 42161,
                     "isEnabled": true,
-                    "minAmount": "2973614000000000",
-                    "maxAmount": "11894456000000000"
+                    "minAmount": "3862904000000000",
+                    "maxAmount": "15451616000000000"
                 },
                 {
                     "chainId": 43114,
                     "isEnabled": true,
-                    "minAmount": "360955992299400",
-                    "maxAmount": "9023899807485000"
+                    "minAmount": "342657497213170",
+                    "maxAmount": "8566437430329250"
                 }
             ]
         }
