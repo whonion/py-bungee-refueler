@@ -1,3 +1,4 @@
+import os
 import requests
 import json
 
@@ -90,25 +91,27 @@ def getMaxSendAmount(parent_chain, destination_chain_id) -> float:
 
 url = "https://refuel.socket.tech/chains"
 output_file = "chains.json"  # File name to save the JSON data
+re_download = False  # Set this flag to True if you want to re-download the JSON file
 
-# Send a GET request to the URL
-response = requests.get(url)
+if re_download or not os.path.exists(output_file):
+    # Send a GET request to the URL
+    response = requests.get(url)
 
-# Check if the request was successful
-if response.status_code == 200:
-    # Parse the JSON data
-    data = json.loads(response.text)
+    # Check if the request was successful
+    if response.status_code == 200:
+        # Parse the JSON data
+        data = json.loads(response.text)
 
-    # Save the JSON data to a file
-    with open(output_file, 'w') as file:
-        json.dump(data, file, indent=4)
+        # Save the JSON data to a file
+        with open(output_file, 'w') as file:
+            json.dump(data, file, indent=4)
 
-    print(f"JSON data saved to {output_file} successfully.")
+        print(f"JSON data saved to {output_file} successfully.")
+    else:
+        print("Failed to retrieve data. Status code:", response.status_code)
 else:
-    print("Failed to retrieve data. Status code:", response.status_code)
-
-file_path = "chains.json"  # Path to the JSON file
+    print(f"Using existing file: {output_file}")
 
 # Load the JSON data from the file
-with open(file_path) as file:
+with open(output_file) as file:
     data = json.load(file)

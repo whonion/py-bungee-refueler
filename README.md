@@ -1,5 +1,6 @@
 # py-bungee-refueler
-Batch send gas-token  with Socket<br>
+[![Status](https://img.shields.io/badge/status-active-success.svg)](https://github.com/whonion/py-bungee-refueler/blob/main/) [![Python version](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3111/) [![Web3.py version](https://img.shields.io/badge/Web3.py-6.0.0-blue.svg)](https://pypi.org/project/web3/6.0.0/) <br>
+Batch send gas-token [bungee.exchange](https://bungee.exchange) (Powered by Socket)<br>
 
 `main.py` preview<br>
 
@@ -46,20 +47,30 @@ BUNGEE_FTM_ROUNER = '0x040993fbF458b95871Cd2D73Ee2E09F4AF6d56bB'
 # Don't recommended to use a public node if you've many wallets else you'll get '429 Client Error: Too Many Requests for url'
 
 RPC_ETH = 'https://rpc.ankr.com/eth/API_KEY'
-RPC_ARB = 'https://rpc.ankr.com/arbitrum/API_KEY'
 RPC_OPT = 'https://rpc.ankr.com/optimism/API_KEY'
 RPC_BSC = 'https://rpc.ankr.com/bsc/API_KEY'
-RPC_MATIC =  'https://rpc.ankr.com/polygon/API_KEY'
-RPC_FTM =  'https://rpc.ankr.com/fantom/API_KEY'
-RPC_AVAX = 'https://rpc.ankr.com/avalanche/API_KEY'
 RPC_GNO = 'https://rpc.ankr.com/gnosis/API_KEY'
+RPC_MATIC = 'https://rpc.ankr.com/polygon/API_KEY'
+RPC_FTM =  'https://rpc.ankr.com/fantom/API_KEY'
+RPC_ERA = 'https://mainnet.era.zksync.io'
+RPC_ZKEVM = 'https://rpc.ankr.com/polygon_zkevm/API_KEY'
+RPC_ARB = 'https://rpc.ankr.com/arbitrum/API_KEY'
+RPC_AVAX = 'https://rpc.ankr.com/avalanche/API_KEY'
 RPC_AUR = 'https://endpoints.omniatech.io/v1/aurora/mainnet/public'
+
 ```
 
 ## How run
 
 - Install Python to your system;
 - Activate the Python Virtual Environment (recommended);
+```sh
+#For Windows
+ python -m venv .venv
+ .\.venv\Scripts\activate
+# For Linux 
+ source .venv/bin/activate
+```
 - Install dependencies.
 
 ```sh

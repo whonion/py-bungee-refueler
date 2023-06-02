@@ -356,7 +356,7 @@ if __name__ == '__main__':
     print('5. ERA(while no implementaton)')
     print('6. ZKEVM(while no implementaton)')
     print('7. Arbitrum(ARB)')
-    print('8. Fantom(deplicated)')
+    print('8. Fantom')
     print('9. Avalanche C-Chain(AVAX)')
     print('10. Aurora(AUR)')
     parent_chain = input('Введите короткое имя сети(ETH,ARB etc.): ')
@@ -508,11 +508,11 @@ if __name__ == '__main__':
 
      elif amount == 'MIN':
           amount = gas_amount[0] * 1.1
-          send_amount = float(amount) * (10**18)
+          send_amount = float(amount)
           break
 
      else:
-          send_amount = float(amount) * (10**18)
+          send_amount = float(amount)
           break
 
     print(f'Начинаю отправлять газ из {parent_chain} в {destination_chain}')
