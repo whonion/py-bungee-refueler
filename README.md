@@ -1,5 +1,5 @@
 # py-bungee-refueler
-[![Status](https://img.shields.io/badge/status-active-success.svg)](https://github.com/whonion/py-bungee-refueler/blob/main/) [![Python version](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3111/) [![Web3.py version](https://img.shields.io/badge/Web3.py-6.0.0-blue.svg)](https://pypi.org/project/web3/6.0.0/) <br>
+[![Status](https://img.shields.io/badge/status-active-success.svg)](https://github.com/whonion/py-bungee-refueler/blob/main/) [![Test Run](https://github.com/whonion/py-bungee-refueler/actions/workflows/test.yml/badge.svg)](https://github.com/whonion/py-bungee-refueler/actions/workflows/test.yml) [![Python version](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3111/) [![Web3.py version](https://img.shields.io/badge/Web3.py-6.0.0-blue.svg)](https://pypi.org/project/web3/6.0.0/) <br>
 Batch send gas-token [bungee.exchange](https://bungee.exchange) (Powered by Socket)<br>
 
 `main.py` preview<br>
